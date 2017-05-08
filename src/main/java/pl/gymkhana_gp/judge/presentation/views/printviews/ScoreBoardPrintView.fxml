@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="rootPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" stylesheets="@../../resources/css/scoreboard.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.gymkhana_gp.judge.presentation.views.printviews.ScoreBoardPrintController">
+   <children>
+      <TableView fx:id="tablePlayersDone" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <columns>
+            <TableColumn fx:id="tablePlayersDoneColumnRowNumber" maxWidth="22.0" minWidth="-Infinity" prefWidth="22.0" text="#" />
+          <TableColumn fx:id="tablePlayersDoneColumnStartNumber" maxWidth="-1.0" minWidth="46.0" prefWidth="46.0" text="Numer" />
+          <TableColumn fx:id="tablePlayersDoneColumnFirstName" maxWidth="-1.0" minWidth="80.0" text="Imię" />
+            <TableColumn fx:id="tablePlayersDoneColumnLastName" maxWidth="-1.0" minWidth="80.0" text="Nazwisko" />
+            <TableColumn fx:id="tablePlayersDoneColumnNick" maxWidth="-1.0" minWidth="80.0" text="Ksywa" />
+            <TableColumn fx:id="tablePlayersDoneColumn1Time" minWidth="55.0" prefWidth="55.0" text="Czas 1" />
+            <TableColumn fx:id="tablePlayersDoneColumn1Penalty" minWidth="22.0" prefWidth="22.0" text="+1" />
+            <TableColumn fx:id="tablePlayersDoneColumn1FullMeasurement" minWidth="55.0" prefWidth="55.0" text="Suma 1" />
+            <TableColumn fx:id="tablePlayersDoneColumn2Time" minWidth="55.0" prefWidth="55.0" text="Czas 2" />
+            <TableColumn fx:id="tablePlayersDoneColumn2Penalty" minWidth="22.0" prefWidth="22.0" text="+2" />
+            <TableColumn fx:id="tablePlayersDoneColumn2FullMeasurement" minWidth="55.0" prefWidth="55.0" text="Suma 2" />
+            <TableColumn fx:id="tablePlayersDoneColumnBestTime" minWidth="55.0" prefWidth="55.0" text="Lepszy" />
+            <TableColumn fx:id="tablePlayersDoneColumnBestPenalty" minWidth="22.0" prefWidth="22.0" text="+" />
+            <TableColumn fx:id="tablePlayersDoneColumnBestFullMeasurement" minWidth="55.0" prefWidth="55.0" text="L Suma" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

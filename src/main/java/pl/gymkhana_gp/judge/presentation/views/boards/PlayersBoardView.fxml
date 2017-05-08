@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+
+<AnchorPane fx:id="rootPane" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.gymkhana_gp.judge.presentation.views.boards.PlayersBoardController">
+   <children>
+      <ScrollPane fitToHeight="true" fitToWidth="true" layoutX="14.0" layoutY="47.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <content>
+            <BorderPane>
+               <center>
+                  <TableView fx:id="tablePlayers" editable="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" BorderPane.alignment="CENTER">
+                    <columns>
+                      <TableColumn fx:id="tablePlayersColumnStartNumber" prefWidth="75.0" text="Numer" />
+                      <TableColumn fx:id="tablePlayersColumnFirstName" prefWidth="167.0" text="Imię" />
+                        <TableColumn fx:id="tablePlayersColumnLastName" prefWidth="200.0" text="Nazwisko" />
+                        <TableColumn fx:id="tablePlayersColumnNick" prefWidth="160.0" text="Ksywa" />
+                        <TableColumn fx:id="tablePlayersColumnSex" prefWidth="93.0" text="Płeć" />
+                        <TableColumn fx:id="tablePlayersColumnPlayerClass" prefWidth="130.0" text="Klasa" />
+                    </columns>
+                  </TableView>
+               </center>
+               <top>
+                  <AnchorPane prefHeight="45.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <HBox spacing="5.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#addPlayer" prefHeight="35.0" prefWidth="35.0">
+                                 <graphic>
+                                    <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../resources/icons/x24/plus.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <tooltip>
+                                    <Tooltip text="Dodaj zawodnika" />
+                                 </tooltip>
+                              </Button>
+                              <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#removePlayer" prefHeight="35.0" prefWidth="35.0">
+                                 <graphic>
+                                    <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../resources/icons/x24/minus.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <tooltip>
+                                    <Tooltip text="Usuń zawodnika" />
+                                 </tooltip>
+                              </Button>
+                           </children>
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                        </HBox>
+                        <HBox layoutX="571.0" layoutY="-5.0" spacing="5.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onOpenFileAction" prefHeight="35.0" prefWidth="35.0">
+                                 <graphic>
+                                    <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../resources/icons/x24/open-folder-outline.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <tooltip>
+                                    <Tooltip text="Otwórz plik z danymi konkursu" />
+                                 </tooltip>
+                              </Button>
+                              <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onImportPlayers" prefHeight="35.0" prefWidth="35.0">
+                                 <graphic>
+                                    <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../resources/icons/x24/download-to-storage-drive.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <tooltip>
+                                    <Tooltip text="Importuj rejestracje zawodników" />
+                                 </tooltip>
+                              </Button>
+                              <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onAboutInfoAction" prefHeight="35.0" prefWidth="35.0">
+                                 <graphic>
+                                    <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../resources/icons/x24/question.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <tooltip>
+                                    <Tooltip text="O programie" />
+                                 </tooltip>
+                              </Button>
+                           </children>
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                        </HBox>
+                     </children>
+                  </AnchorPane>
+               </top>
+            </BorderPane>
+         </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>
