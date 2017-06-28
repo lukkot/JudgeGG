@@ -12,7 +12,7 @@ public class CommonsCsvTest {
 
 	@Test
 	public void test() throws IOException {
-		Reader in = new FileReader("C:\\Programowanie\\Java-Spring\\GymkhanaGP\\registrations16\\g16t_registrations_list.csv");
+		Reader in = new FileReader("src\\test\\resources\\g16t_registrations_list_test_data.csv");
 		Iterable<CSVRecord> records = CSVFormat.EXCEL.parse(in);
 		for (CSVRecord record : records) {
 		    System.out.println(record.get(5) + " " + record.get(6) + " " + record.get(7));
