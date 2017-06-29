@@ -16,6 +16,7 @@ import javafx.scene.control.SplitPane;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.ToggleButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
@@ -24,9 +25,7 @@ import pl.gymkhana_gp.judge.comparators.PlayerDtoComparator;
 import pl.gymkhana_gp.judge.comparators.PlayerDtoComparator.ComparisonType;
 import pl.gymkhana_gp.judge.controllers.TournamentsControllerBean;
 import pl.gymkhana_gp.judge.converter.PlayerViewDataUtils;
-import pl.gymkhana_gp.judge.model.dao.IClockObserver;
 import pl.gymkhana_gp.judge.model.dto.PlayerDto;
-import pl.gymkhana_gp.judge.model.dto.TimeDto;
 import pl.gymkhana_gp.judge.presentation.model.PlayerViewData;
 import pl.gymkhana_gp.judge.presentation.model.TournamentBoardModel;
 import pl.gymkhana_gp.judge.presentation.views.MainWindowController;
@@ -40,8 +39,9 @@ import pl.gymkhana_gp.judge.utils.validation.ObservableValueValidationOnFocusLos
 
 @Component
 @Scope("prototype")
-public class TournamentBoardController implements IOnDataChangedListener<PlayerViewData>, IValidationErrorsListener, IClockObserver {
-	
+public class TournamentBoardController
+		implements IOnDataChangedListener<PlayerViewData>, IValidationErrorsListener {
+
 	@Autowired
 	private TournamentsControllerBean tournamentControllerBean;
 
@@ -70,7 +70,7 @@ public class TournamentBoardController implements IOnDataChangedListener<PlayerV
 
 	@FXML
 	private BorderPane rootPane;
-	
+
 	@FXML
 	private SplitPane mainSplitPane;
 
@@ -131,7 +131,7 @@ public class TournamentBoardController implements IOnDataChangedListener<PlayerV
 	@FXML
 	private Label labelCurrentPlayerNick;
 	@FXML
-	private Label labelCurrentPlayerAutomaticMeasurement;
+	private TextField textFieldTimeCurrentAutomaticMeasurement;
 	@FXML
 	private TextField textFieldTime1;
 	@FXML
@@ -140,6 +140,8 @@ public class TournamentBoardController implements IOnDataChangedListener<PlayerV
 	private TextField textFieldTime2;
 	@FXML
 	private TextField textFieldPenalty2;
+	@FXML
+	private ToggleButton toggleButtonClockListener;
 
 	@FXML
 	private void initialize() {
@@ -188,6 +190,8 @@ public class TournamentBoardController implements IOnDataChangedListener<PlayerV
 		tablePlayersDone.setItems(tournamentBoardModel.getDonePlayersList());
 
 		// Pola tekstowe
+		textFieldTimeCurrentAutomaticMeasurement.textProperty()
+				.bindBidirectional(tournamentBoardModel.getTimeCurrentAutomaticMeasurement());
 		textFieldTime1.textProperty().bindBidirectional(tournamentBoardModel.getTime1());
 		textFieldPenalty1.textProperty().bindBidirectional(tournamentBoardModel.getPenalty1(),
 				new NumberStringConverter());
@@ -230,8 +234,10 @@ public class TournamentBoardController implements IOnDataChangedListener<PlayerV
 		setCurrentPlayerControlsAvailability(roundNumber);
 
 		bindCurrentPlayerValidation();
-		
+
 		setEmphasizationToScoreTable();
+
+		updateClockListenerState();
 	}
 
 	private void setColumnsVisibility() {
@@ -298,13 +304,11 @@ public class TournamentBoardController implements IOnDataChangedListener<PlayerV
 			labelCurrentPlayerFirstName.setText("");
 			labelCurrentPlayerLastName.setText("");
 			labelCurrentPlayerNick.setText("");
-			labelCurrentPlayerAutomaticMeasurement.setText("--:--.---");
 		} else {
 			labelCurrentPlayerStartNumber.setText(player.getStartNumber().asString().get());
 			labelCurrentPlayerFirstName.setText(player.getFirstName().get());
 			labelCurrentPlayerLastName.setText(player.getLastName().get());
 			labelCurrentPlayerNick.setText(player.getNick().get());
-			labelCurrentPlayerAutomaticMeasurement.setText("Brak danych :(");
 		}
 	}
 
@@ -441,20 +445,24 @@ public class TournamentBoardController implements IOnDataChangedListener<PlayerV
 	private void doubleClickOnTable(MouseEvent event) {
 		@SuppressWarnings("unchecked")
 		TableView<PlayerViewData> tableView = (TableView<PlayerViewData>) event.getSource();
-		
-		if(tableView != null && event.getClickCount() == 2) {
+
+		if (tableView != null && event.getClickCount() == 2) {
 			selectCurrentPlayer(tableView, tableView.getSelectionModel().getSelectedIndex());
 		}
 	}
 
-	@Override
-	public void onClockUpdate(TimeDto time) {
-		// TODO Auto-generated method stub
-		
-	}
-	
 	@FXML
 	private void onFreezClockClicked(javafx.event.ActionEvent actionEvent) {
-		System.out.println("");
+		updateClockListenerState();
+	}
+
+	private void updateClockListenerState() {
+		boolean shouldIListenToTheClock = toggleButtonClockListener.isSelected();
+
+		if (shouldIListenToTheClock) {
+			tournamentControllerBean.addClockListener(tournamentBoardModel);
+		} else {
+			tournamentControllerBean.removeClockListener(tournamentBoardModel);
+		}
 	}
 }

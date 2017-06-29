@@ -11,10 +11,12 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import pl.gymkhana_gp.judge.model.dao.IClockObserver;
+import pl.gymkhana_gp.judge.model.dto.TimeDto;
 
 @Component
 @Scope("prototype")
-public class TournamentBoardModel {
+public class TournamentBoardModel implements IClockObserver {
 
 	private final ObservableList<PlayerViewData> waitingPlayersList = FXCollections.observableArrayList();
 
@@ -22,6 +24,8 @@ public class TournamentBoardModel {
 
 	private PlayerViewDataObservable currentPlayer = new PlayerViewDataObservable(PlayerViewData.NULL_PLAYER_VIEW_DATA);
 
+	private final StringProperty timeCurrentAutomaticMeasurement = new SimpleStringProperty();
+	
 	private final StringProperty time1 = new SimpleStringProperty();
 
 	private final IntegerProperty penalty1 = new SimpleIntegerProperty();
@@ -65,6 +69,10 @@ public class TournamentBoardModel {
 		return currentPlayer;
 	}
 
+	public StringProperty getTimeCurrentAutomaticMeasurement() {
+		return timeCurrentAutomaticMeasurement;
+	}
+
 	public StringProperty getTime1() {
 		return time1;
 	}
@@ -79,5 +87,10 @@ public class TournamentBoardModel {
 
 	public IntegerProperty getPenalty2() {
 		return penalty2;
+	}
+
+	@Override
+	public void onClockUpdate(TimeDto time) {
+		timeCurrentAutomaticMeasurement.set(time.getTimeFormatted());
 	}
 }

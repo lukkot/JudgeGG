@@ -66,15 +66,6 @@
                               <TextField fx:id="textFieldTime1" onAction="#onTimeAccepted" promptText="00:00.000" GridPane.columnIndex="2" GridPane.rowIndex="1" />
                               <TextField fx:id="textFieldPenalty1" onAction="#onPenaltyAccepted" promptText="0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
                               <Label text="Czas mierzony" />
-                              <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="5.0" GridPane.columnIndex="2" GridPane.columnSpan="2">
-                                 <children>
-                                    <Label fx:id="labelCurrentPlayerAutomaticMeasurement" text="--:--.---">
-                                       <HBox.margin>
-                                          <Insets />
-                                       </HBox.margin>
-                                    </Label>
-                                 </children>
-                              </HBox>
                               <TextField fx:id="textFieldTime2" onAction="#onTimeAccepted" promptText="00:00.000" GridPane.columnIndex="2" GridPane.rowIndex="2" />
                               <TextField fx:id="textFieldPenalty2" onAction="#onPenaltyAccepted" promptText="0" GridPane.columnIndex="3" GridPane.rowIndex="2" />
                               <Button disable="true" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
@@ -132,7 +123,7 @@
                                     <Insets bottom="5.0" top="5.0" />
                                  </padding>
                               </HBox>
-                              <ToggleButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" GridPane.columnIndex="1">
+                              <ToggleButton fx:id="toggleButtonClockListener" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onFreezClockClicked" prefHeight="35.0" prefWidth="35.0" GridPane.columnIndex="1">
                                  <graphic>
                                     <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
@@ -141,6 +132,7 @@
                                     </ImageView>
                                  </graphic>
                               </ToggleButton>
+                              <TextField fx:id="textFieldTimeCurrentAutomaticMeasurement" editable="false" promptText="00:00.000" GridPane.columnIndex="2" />
                            </children>
                         </GridPane>
                      </children>
