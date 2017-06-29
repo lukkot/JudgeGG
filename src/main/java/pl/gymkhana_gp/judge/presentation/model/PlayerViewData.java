@@ -49,7 +49,6 @@ public class PlayerViewData implements ChangeListener<Object> {
 	@NotEmpty
 	private final StringProperty lastName;
 	@UnwrapValidatedValue
-	@NotEmpty
 	private final StringProperty nick;
 	@UnwrapValidatedValue
 	@NotEmpty
