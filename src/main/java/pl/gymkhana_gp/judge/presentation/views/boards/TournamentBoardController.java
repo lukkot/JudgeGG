@@ -24,7 +24,9 @@ import pl.gymkhana_gp.judge.comparators.PlayerDtoComparator;
 import pl.gymkhana_gp.judge.comparators.PlayerDtoComparator.ComparisonType;
 import pl.gymkhana_gp.judge.controllers.TournamentsControllerBean;
 import pl.gymkhana_gp.judge.converter.PlayerViewDataUtils;
+import pl.gymkhana_gp.judge.model.dao.IClockObserver;
 import pl.gymkhana_gp.judge.model.dto.PlayerDto;
+import pl.gymkhana_gp.judge.model.dto.TimeDto;
 import pl.gymkhana_gp.judge.presentation.model.PlayerViewData;
 import pl.gymkhana_gp.judge.presentation.model.TournamentBoardModel;
 import pl.gymkhana_gp.judge.presentation.views.MainWindowController;
@@ -38,7 +40,7 @@ import pl.gymkhana_gp.judge.utils.validation.ObservableValueValidationOnFocusLos
 
 @Component
 @Scope("prototype")
-public class TournamentBoardController implements IOnDataChangedListener<PlayerViewData>, IValidationErrorsListener {
+public class TournamentBoardController implements IOnDataChangedListener<PlayerViewData>, IValidationErrorsListener, IClockObserver {
 	
 	@Autowired
 	private TournamentsControllerBean tournamentControllerBean;
@@ -443,5 +445,16 @@ public class TournamentBoardController implements IOnDataChangedListener<PlayerV
 		if(tableView != null && event.getClickCount() == 2) {
 			selectCurrentPlayer(tableView, tableView.getSelectionModel().getSelectedIndex());
 		}
+	}
+
+	@Override
+	public void onClockUpdate(TimeDto time) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	@FXML
+	private void onFreezClockClicked(javafx.event.ActionEvent actionEvent) {
+		System.out.println("");
 	}
 }

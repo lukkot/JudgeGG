@@ -16,6 +16,8 @@ import org.springframework.stereotype.Component;
 import org.springframework.xml.transform.StringResult;
 
 import pl.gymkhana_gp.judge.ConfigurationBean;
+import pl.gymkhana_gp.judge.model.dao.ExternalClockDaoImpl;
+import pl.gymkhana_gp.judge.model.dao.IClockObserver;
 import pl.gymkhana_gp.judge.model.dao.PlayerCsvFileDaoImpl;
 import pl.gymkhana_gp.judge.model.dao.TournamentDaoImpl;
 import pl.gymkhana_gp.judge.model.dto.GymkhanaTournamentDto;
@@ -35,6 +37,9 @@ public class TournamentsControllerBean {
 	
 	@Autowired
 	private PlayerCsvFileDaoImpl playerCsvFileDaoImpl;
+	
+	@Autowired
+	private ExternalClockDaoImpl externalClockDaoImpl;
 
 	public void saveData() {
 		StringResult result = new StringResult();
@@ -74,6 +79,22 @@ public class TournamentsControllerBean {
 		}
 
 		saveData();
+	}
+	
+	public void addClockListener(IClockObserver observer) {
+		externalClockDaoImpl.addClockListener(observer);
+	}
+	
+	public void removeClockListener(IClockObserver observer) {
+		externalClockDaoImpl.removeClockListener(observer);
+	}
+	
+	public void startReadingFromClock() {
+		externalClockDaoImpl.startReading();
+	}
+	
+	public void stopReadingFromClock() {
+		externalClockDaoImpl.stopReading();
 	}
 
 	public List<PlayerDto> getAllPlayersData() {
@@ -116,5 +137,13 @@ public class TournamentsControllerBean {
 		tournamentDaoImpl.updatePlayerData(newPlayerDto);
 
 		saveData();
+	}
+
+	public ExternalClockDaoImpl getExternalClockDaoImpl() {
+		return externalClockDaoImpl;
+	}
+
+	public void setExternalClockDaoImpl(ExternalClockDaoImpl externalClockDaoImpl) {
+		this.externalClockDaoImpl = externalClockDaoImpl;
 	}
 }

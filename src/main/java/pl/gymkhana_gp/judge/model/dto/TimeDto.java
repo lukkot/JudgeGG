@@ -25,6 +25,21 @@ public class TimeDto {
 	public TimeDto(String timeString) {
 		setTime(timeString);
 	}
+	
+	@Override
+	public int hashCode() {
+		return Long.hashCode(timeMilliseconds);
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		TimeDto timeDto2 = (TimeDto)obj;
+		if(timeDto2 == null) {
+			return false;
+		} else {
+			return timeMilliseconds == timeDto2.timeMilliseconds;
+		}
+	}
 
 	@XmlElement(name="value")
 	public String getTimeFormatted() {

@@ -1,5 +1,6 @@
 package pl.gymkhana_gp.judge;
 
+import java.util.Locale;
 import java.util.ResourceBundle;
 
 import org.springframework.context.annotation.Configuration;
@@ -35,7 +36,7 @@ public class MainApplication extends Application {
 		FXMLLoader fxmlLoader = new FXMLLoader(
 				getClass().getResource("/pl/gymkhana_gp/judge/presentation/views/MainWindowView.fxml"));
 		fxmlLoader.setControllerFactory(context::getBean);
-		fxmlLoader.setResources(ResourceBundle.getBundle("text-resources"));
+		fxmlLoader.setResources(ResourceBundle.getBundle("text-resources", new Locale("pl", "PL")));
 
 		BorderPane rootNode = fxmlLoader.load();
 
