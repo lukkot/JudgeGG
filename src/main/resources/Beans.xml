@@ -38,4 +38,8 @@
 			</list>
 		</property>
 	</bean>
+
+	<!-- RS-232 -->
+	<bean id="serialPort" class="com.fazecast.jSerialComm.SerialPort" scope="prototype">
+	</bean>
 </beans>

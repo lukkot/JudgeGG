@@ -11,8 +11,8 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import pl.gymkhana_gp.judge.model.dao.IClockObserver;
 import pl.gymkhana_gp.judge.model.dto.TimeDto;
+import pl.gymkhana_gp.judge.services.IClockObserver;
 
 @Component
 @Scope("prototype")

@@ -7,41 +7,42 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 
-@XmlRootElement(name="time")
+@XmlRootElement(name = "time")
 public class TimeDto {
 	private static final String TIME_REGEX = "([0-9]+):([0-9]{2}).([0-9]{3})";
 	private static final Pattern TIME_PATTERN = Pattern.compile(TIME_REGEX);
-	
+
 	private static final String TIME_FORMAT = "%02d:%02d.%03d";
-	
+
 	private long timeMilliseconds;
-	
-	public TimeDto() { }
-	
+
+	public TimeDto() {
+	}
+
 	public TimeDto(long timeMilliseconds) {
 		setTime(timeMilliseconds);
 	}
-	
+
 	public TimeDto(String timeString) {
 		setTime(timeString);
 	}
-	
+
 	@Override
 	public int hashCode() {
 		return Long.hashCode(timeMilliseconds);
 	}
-	
+
 	@Override
 	public boolean equals(Object obj) {
-		TimeDto timeDto2 = (TimeDto)obj;
-		if(timeDto2 == null) {
+		TimeDto timeDto2 = (TimeDto) obj;
+		if (timeDto2 == null) {
 			return false;
 		} else {
 			return timeMilliseconds == timeDto2.timeMilliseconds;
 		}
 	}
 
-	@XmlElement(name="value")
+	@XmlElement(name = "value")
 	public String getTimeFormatted() {
 		long minutes = timeMilliseconds / 1000 / 60;
 		long seconds = timeMilliseconds / 1000 - minutes * 60;
@@ -52,14 +53,14 @@ public class TimeDto {
 	public void setTimeFormatted(String timeString) {
 		setTime(timeString);
 	}
-	
+
 	public void setTime(String timeString) {
 		Matcher matcher = TIME_PATTERN.matcher(timeString);
-		if(matcher.groupCount() != 3) {
+		if (matcher.groupCount() != 3) {
 			throw new IllegalArgumentException(timeString + " != " + TIME_REGEX);
 		}
-		
-		if(matcher.find()) {
+
+		if (matcher.find()) {
 			long minutes = Long.parseLong(matcher.group(1));
 			long seconds = Long.parseLong(matcher.group(2));
 			long milliseconds = Long.parseLong(matcher.group(3));
@@ -74,5 +75,10 @@ public class TimeDto {
 
 	public void setTime(long timeMilliseconds) {
 		this.timeMilliseconds = timeMilliseconds;
+	}
+
+	public static boolean isValidTime(String timeString) {
+		Matcher matcher = TIME_PATTERN.matcher(timeString);
+		return matcher.find();
 	}
 }

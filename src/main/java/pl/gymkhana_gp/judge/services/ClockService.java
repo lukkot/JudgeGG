@@ -1,21 +1,28 @@
-package pl.gymkhana_gp.judge.model.dao;
+package pl.gymkhana_gp.judge.services;
 
 import java.util.HashSet;
 import java.util.Set;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+
+import com.fazecast.jSerialComm.SerialPort;
 
 import pl.gymkhana_gp.judge.model.dto.TimeDto;
 
 @Component
-public class ExternalClockDaoImpl implements Runnable {
+public class ClockService implements Runnable {
+	
+	@Autowired
+	SerialPort serialPort;
+	
 	private volatile TimeDto currentTime = new TimeDto(0);
 	private Thread readingThread;
 	private volatile boolean readData;
 	
 	Set<IClockObserver> observers = new HashSet<>();
 
-	public ExternalClockDaoImpl() {
+	public ClockService() {
 		startReading();
 	}
 	

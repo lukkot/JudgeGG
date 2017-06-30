@@ -1,4 +1,4 @@
-package pl.gymkhana_gp.judge.model.dao;
+package pl.gymkhana_gp.judge.services;
 
 import pl.gymkhana_gp.judge.model.dto.TimeDto;
 
