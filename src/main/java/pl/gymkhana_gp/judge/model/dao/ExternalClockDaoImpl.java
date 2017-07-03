@@ -3,6 +3,7 @@ package pl.gymkhana_gp.judge.model.dao;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.fazecast.jSerialComm.SerialPort;
@@ -11,8 +12,9 @@ import pl.gymkhana_gp.judge.model.dto.TimeDto;
 
 @Component
 public class ExternalClockDaoImpl {
+	@Autowired
 	protected SerialPort serialPort;
-	protected TimeDto currentTime = new TimeDto();
+	
 	protected StringBuffer buffer = new StringBuffer();
 	
 	public List<String> getPorts() {
@@ -28,6 +30,7 @@ public class ExternalClockDaoImpl {
 	public void open(String serialPortName) {
 		serialPort = SerialPort.getCommPort(serialPortName);
 		serialPort.openPort();
+		serialPort.setComPortTimeouts(SerialPort.TIMEOUT_READ_SEMI_BLOCKING, 100, 0);
 	}
 	
 	public void close() {
@@ -38,15 +41,19 @@ public class ExternalClockDaoImpl {
 	public TimeDto readTime() {
 		TimeDto time = null;
 		byte[] byteBuffer = new byte[1];
-		while(true) {
-			serialPort.readBytes(byteBuffer, 1);
+		boolean read = true;
+		
+		while(read) {
+			int readBytes = serialPort.readBytes(byteBuffer, 1);
 			
-			if(byteBuffer[0] != '\n') {
+			if(readBytes == 0) {
+				read = false;
+			} if(byteBuffer[0] != '\n') {
 				buffer.append((char)byteBuffer[0]);
 			} else {
 				time = translateBuffer();
 				if(time != null) {
-					break;
+					read = false;
 				}
 			}
 		}

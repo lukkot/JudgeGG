@@ -48,26 +48,28 @@ public class ExternalClockDaoImplTest {
 	}
 
 	@Test
-	public void shouldReturnOneTime() {
-		String time = "12:34.567";
+	public void shouldReturnTwoTimesOneAfterTheOther() {
+		String time1 = "12:34.567";
+		String time2 = "24:58.123";
 		
 		externalClockDaoImpl.serialPort = mockSerialPortWithName("COM0");
 		
-		doAnswer(new Answer<Void>() {
+		doAnswer(new Answer<Integer>() {
 			int index = 0;
-			byte[] buffer = ("1.123\n" + time + "\n12").getBytes();
+			byte[] buffer = ("1.123\n" + time1 + "\n" + time2 + "\n12").getBytes();
 			
 			@Override
-			public Void answer(InvocationOnMock invocation) throws Throwable {
-				System.out.println(index);
+			public Integer answer(InvocationOnMock invocation) throws Throwable {
 				byte[] response = invocation.getArgument(0);
 				System.arraycopy(buffer, index++, response, 0, 1);
-				return null;
+				return 1;
 			}
 		}).when(externalClockDaoImpl.serialPort).readBytes(any(), anyLong());
 		
-		TimeDto result = externalClockDaoImpl.readTime();
+		TimeDto result1 = externalClockDaoImpl.readTime();
+		TimeDto result2 = externalClockDaoImpl.readTime();
 		
-		assertEquals(time, result.getTimeFormatted());
+		assertEquals(time1, result1.getTimeFormatted());
+		assertEquals(time2, result2.getTimeFormatted());
 	}
 }
