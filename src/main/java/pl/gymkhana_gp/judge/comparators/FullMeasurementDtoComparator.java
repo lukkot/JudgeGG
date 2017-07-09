@@ -1,6 +1,7 @@
 package pl.gymkhana_gp.judge.comparators;
 
 import java.util.Comparator;
+import java.util.Objects;
 
 import org.springframework.stereotype.Component;
 
@@ -19,9 +20,10 @@ public class FullMeasurementDtoComparator implements Comparator<FullMeasurementD
 			return Integer.MIN_VALUE;
 		}
 
-		return Long.compare(
-				fullMeasurementDto1.getTime().getTimeMilliseconds() + fullMeasurementDto1.getPenaltyInSeconds() * 1000,
-				fullMeasurementDto2.getTime().getTimeMilliseconds() + fullMeasurementDto2.getPenaltyInSeconds() * 1000);
+		final int result = Objects.compare(fullMeasurementDto1.getTimeWithPenalty(), fullMeasurementDto2.getTimeWithPenalty(), new TimeDtoComparator());
+
+		return result;
+
 	}
 
 }

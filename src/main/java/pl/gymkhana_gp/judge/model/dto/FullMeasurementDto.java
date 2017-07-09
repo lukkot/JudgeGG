@@ -1,14 +1,18 @@
 package pl.gymkhana_gp.judge.model.dto;
 
+import org.apache.commons.lang3.StringUtils;
+import pl.gymkhana_gp.judge.model.dto.time.TimeResult;
+
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
+import java.time.Duration;
 
 @XmlRootElement
 public class FullMeasurementDto {
 	
-	public static FullMeasurementDto getInstanceOrNull(String time, long penalty) {
-		if(time == null || "".equals(time)) {
+	public static FullMeasurementDto getInstanceOrNull(final String time, final long penalty) {
+		if(StringUtils.isBlank(time)) {
 			return null;
 		} else {
 			return new FullMeasurementDto(new TimeDto(time), penalty);
@@ -16,14 +20,13 @@ public class FullMeasurementDto {
 	}
 	
 	private TimeDto time = new TimeDto();
-	
-	private long penaltyInSeconds;
+	private long penalty;
 	
 	public FullMeasurementDto() { }
 	
 	public FullMeasurementDto(TimeDto time, long penalty) {
 		this.time = time;
-		this.penaltyInSeconds = penalty;
+		this.penalty = penalty;
 	}
 
 	@XmlElement
@@ -36,17 +39,19 @@ public class FullMeasurementDto {
 	}
 
 	@XmlElement
-	public long getPenaltyInSeconds() {
-		return penaltyInSeconds;
+	public long getPenalty() {
+		return penalty;
 	}
 
-	public void setPenaltyInSeconds(long penalty) {
-		this.penaltyInSeconds = penalty;
+	public void setPenalty(long penalty) {
+		this.penalty = penalty;
 	}
 	
 	@XmlTransient
 	public TimeDto getTimeWithPenalty() {
-		return new TimeDto(time.getTimeMilliseconds() + penaltyInSeconds * 1000);
+		final TimeResult time = this.time.getTime();
+		final TimeResult fullTime = time.addPenalty(penalty);
+		return new TimeDto(fullTime);
 	}
 	
 }

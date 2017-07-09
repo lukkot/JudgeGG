@@ -57,12 +57,12 @@ public class PlayerViewData implements ChangeListener<Object> {
 	@NotEmpty
 	private final StringProperty sex;
 	@UnwrapValidatedValue
-	@Pattern(regexp = "(^[0-9]{2,}:[0-9]{2}.[0-9]{3}$)|(^$)", message = "Wymagany format: \"00:00.000\" lub pusty string")
+	@Pattern(regexp = "(^[0-9]{2,}:[0-9]{2}.[0-9]{2,3}$)|(^DNF$)|(^DNS$)|(^DSQ$)|(^$)", message = "Wymagany format: \"099:99.990\", \"DNS\", \"DNF\", \"DSQ\" lub puste")
 	private final StringProperty time1;
 	private final IntegerProperty penalty1;
 	private final StringProperty fullMeasurement1;
 	@UnwrapValidatedValue
-	@Pattern(regexp = "(^[0-9]{2,}:[0-9]{2}.[0-9]{3}$)|(^$)", message = "Wymagany format: \"00:00.000\" lub pusty string")
+	@Pattern(regexp = "(^[0-9]{2,}:[0-9]{2}.[0-9]{2,3}$)|(^DNF$)|(^DNS$)|(^DSQ$)|(^$)", message = "Wymagany format: \"099:99.990\", \"DNS\", \"DNF\", \"DSQ\" lub puste")
 	private final StringProperty time2;
 	private final IntegerProperty penalty2;
 	private final StringProperty fullMeasurement2;
@@ -132,7 +132,7 @@ public class PlayerViewData implements ChangeListener<Object> {
 			fullMeasurementBest.set("");
 		} else {
 			timeBest.set(bestFullMeasurement.getTime().getTimeFormatted());
-			penaltyBest.set((int) bestFullMeasurement.getPenaltyInSeconds());
+			penaltyBest.set((int) bestFullMeasurement.getPenalty());
 			fullMeasurementBest.set(bestFullMeasurement.getTimeWithPenalty().getTimeFormatted());
 		}
 	}
@@ -285,7 +285,7 @@ public class PlayerViewData implements ChangeListener<Object> {
 		}
 
 		measurements.get(roundNumber).getTime().setTime(times.get(roundNumber).get());
-		measurements.get(roundNumber).setPenaltyInSeconds(penalties.get(roundNumber).get());
+		measurements.get(roundNumber).setPenalty(penalties.get(roundNumber).get());
 	}
 
 	private String getFullMeasurement(StringProperty time, IntegerProperty penalty) {

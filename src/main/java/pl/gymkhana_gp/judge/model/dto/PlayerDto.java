@@ -1,6 +1,7 @@
 package pl.gymkhana_gp.judge.model.dto;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import javax.xml.bind.annotation.XmlElement;
@@ -141,7 +142,9 @@ public class PlayerDto {
 	}
 
 	public void setGp8Measurements(List<FullMeasurementDto> gp8Measurements) {
-		this.gp8Measurements = gp8Measurements;
+		if ((gp8Measurements != null) && (!gp8Measurements.isEmpty())) {
+			this.gp8Measurements = gp8Measurements;
+		}
 	}
 
 	@XmlElementWrapper
