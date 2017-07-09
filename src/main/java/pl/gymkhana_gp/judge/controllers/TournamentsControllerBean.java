@@ -112,8 +112,12 @@ public class TournamentsControllerBean {
 		saveData();
 	}
 
-	public void updatePlayerData(PlayerDto newPlayerDto) {
-		tournamentDaoImpl.updatePlayerData(newPlayerDto);
+	public void updatePlayerData(final PlayerDto newPlayerDto) {
+		updatePlayerData(newPlayerDto, TournamentType.NO_TOURNAMENT);
+	}
+
+	public void updatePlayerData(final PlayerDto newPlayerDto, final TournamentType tournamentType) {
+		tournamentDaoImpl.updatePlayerData(newPlayerDto, tournamentType);
 
 		saveData();
 	}

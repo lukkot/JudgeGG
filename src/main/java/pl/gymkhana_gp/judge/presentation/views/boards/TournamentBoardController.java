@@ -25,6 +25,7 @@ import pl.gymkhana_gp.judge.comparators.PlayerDtoComparator.ComparisonType;
 import pl.gymkhana_gp.judge.controllers.TournamentsControllerBean;
 import pl.gymkhana_gp.judge.converter.PlayerViewDataUtils;
 import pl.gymkhana_gp.judge.model.dto.PlayerDto;
+import pl.gymkhana_gp.judge.model.enums.TournamentType;
 import pl.gymkhana_gp.judge.presentation.model.PlayerViewData;
 import pl.gymkhana_gp.judge.presentation.model.TournamentBoardModel;
 import pl.gymkhana_gp.judge.presentation.views.MainWindowController;
@@ -341,7 +342,9 @@ public class TournamentBoardController implements IOnDataChangedListener<PlayerV
 		}
 
 		playerViewDataCurrent.getTime(getRoundNumberSelected()).set("");
-		tournamentControllerBean.updatePlayerData(playerViewDataUtils.convert(playerViewDataCurrent));
+		final TournamentType tournamentType = getTournamentType();
+
+		tournamentControllerBean.updatePlayerData(playerViewDataUtils.convert(playerViewDataCurrent), tournamentType);
 		boardControllerHelper.setPlayerCurrent(null);
 
 		refreshPaneData();
@@ -355,9 +358,23 @@ public class TournamentBoardController implements IOnDataChangedListener<PlayerV
 		}
 
 		changeEmptyTimeInToSomeTime(playerViewDataAccepted, getRoundNumberSelected());
-		tournamentControllerBean.updatePlayerData(playerViewDataUtils.convert(playerViewDataAccepted));
+
+		final TournamentType tournamentType = getTournamentType();
+
+		tournamentControllerBean.updatePlayerData(playerViewDataUtils.convert(playerViewDataAccepted), tournamentType);
 		boardControllerHelper.setPlayerCurrent(null);
 		refreshPaneData();
+	}
+
+	private TournamentType getTournamentType() {
+		final TournamentType tournamentType;
+
+		if (this.boardControllerHelper instanceof AbstractBoardControllerHelper) {
+			tournamentType = ((AbstractBoardControllerHelper) this.boardControllerHelper).getTournamentType();
+		} else {
+			tournamentType = null;
+		}
+		return tournamentType;
 	}
 
 	private void changeEmptyTimeInToSomeTime(PlayerViewData playerViewDataAccepted, int roundNumber) {

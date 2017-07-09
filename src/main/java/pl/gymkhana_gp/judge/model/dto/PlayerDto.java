@@ -1,7 +1,6 @@
 package pl.gymkhana_gp.judge.model.dto;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 import javax.xml.bind.annotation.XmlElement;
@@ -10,6 +9,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 import pl.gymkhana_gp.judge.model.enums.PlayerClass;
 import pl.gymkhana_gp.judge.model.enums.Sex;
+import pl.gymkhana_gp.judge.model.enums.TournamentType;
 
 @XmlRootElement
 public class PlayerDto {
@@ -59,15 +59,25 @@ public class PlayerDto {
 		classicMeasurements.add(MEASUREMENT_ROUND_2, null);
 	}
 
-	public void update(PlayerDto newPlayerDto) {
+	public void update(final PlayerDto newPlayerDto, final TournamentType tournamentType) {
 		setStartNumber(newPlayerDto.getStartNumber());
 		setFirstName(newPlayerDto.getFirstName());
 		setLastName(newPlayerDto.getLastName());
 		setNick(newPlayerDto.getNick());
 		setPlayerClass(newPlayerDto.getPlayerClass());
 		setSex(newPlayerDto.getSex());
-		setGp8Measurements(newPlayerDto.getGp8Measurements());
-		setClassicMeasurements(newPlayerDto.getClassicMeasurements());
+
+		switch (tournamentType) {
+			case GP8:
+				setGp8Measurements(newPlayerDto.getGp8Measurements());
+				break;
+			case CLASSIC_PRO:
+			case CLASSIC_AMATEUR:
+				setClassicMeasurements(newPlayerDto.getClassicMeasurements());
+				break;
+			default:
+				break;
+		}
 	}
 
 	@Override
