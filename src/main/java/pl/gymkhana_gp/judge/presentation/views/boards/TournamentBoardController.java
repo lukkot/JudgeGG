@@ -10,6 +10,7 @@ import org.springframework.validation.Errors;
 
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.SplitPane;
@@ -133,9 +134,13 @@ public class TournamentBoardController
 	@FXML
 	private TextField textFieldTimeCurrentAutomaticMeasurement;
 	@FXML
+	private Button buttonReadFromClock1;
+	@FXML
 	private TextField textFieldTime1;
 	@FXML
 	private TextField textFieldPenalty1;
+	@FXML
+	private Button buttonReadFromClock2;
 	@FXML
 	private TextField textFieldTime2;
 	@FXML
@@ -290,11 +295,13 @@ public class TournamentBoardController
 				|| boardControllerHelper.shouldControlsForMeasurementBeAvailable(0, roundNumber)) {
 			textFieldTime1.setDisable(currentPlayerControlsDisabled);
 			textFieldPenalty1.setDisable(currentPlayerControlsDisabled);
+			buttonReadFromClock1.setDisable(currentPlayerControlsDisabled);
 		}
 		if (currentPlayerControlsDisabled
 				|| boardControllerHelper.shouldControlsForMeasurementBeAvailable(1, roundNumber)) {
 			textFieldTime2.setDisable(currentPlayerControlsDisabled);
 			textFieldPenalty2.setDisable(currentPlayerControlsDisabled);
+			buttonReadFromClock2.setDisable(currentPlayerControlsDisabled);
 		}
 	}
 
@@ -459,10 +466,24 @@ public class TournamentBoardController
 	private void updateClockListenerState() {
 		boolean shouldIListenToTheClock = toggleButtonClockListener.isSelected();
 
-		if (shouldIListenToTheClock) {
+		if (!shouldIListenToTheClock) {
 			tournamentControllerBean.addClockListener(tournamentBoardModel);
 		} else {
 			tournamentControllerBean.removeClockListener(tournamentBoardModel);
 		}
+	}
+	
+	@FXML
+	private void onButtonReadClock1() {
+		readClockTo(textFieldTime1);
+	}
+	
+	@FXML
+	private void onButtonReadClock2() {
+		readClockTo(textFieldTime2);
+	}
+	
+	private void readClockTo(TextField textField) {
+		textField.setText(textFieldTimeCurrentAutomaticMeasurement.getText());
 	}
 }

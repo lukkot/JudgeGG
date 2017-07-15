@@ -68,7 +68,7 @@
                               <Label text="Czas mierzony" />
                               <TextField fx:id="textFieldTime2" onAction="#onTimeAccepted" promptText="00:00.000" GridPane.columnIndex="2" GridPane.rowIndex="2" />
                               <TextField fx:id="textFieldPenalty2" onAction="#onPenaltyAccepted" promptText="0" GridPane.columnIndex="3" GridPane.rowIndex="2" />
-                              <Button disable="true" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                              <Button fx:id="buttonReadFromClock1" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onButtonReadClock1" prefHeight="35.0" prefWidth="35.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                  <graphic>
                                     <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
@@ -80,7 +80,7 @@
                                     <Tooltip text="Użyj czasu mierzonego" />
                                  </tooltip>
                               </Button>
-                              <Button disable="true" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                              <Button fx:id="buttonReadFromClock2" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onButtonReadClock2" prefHeight="35.0" prefWidth="35.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                                  <graphic>
                                     <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
                                        <image>

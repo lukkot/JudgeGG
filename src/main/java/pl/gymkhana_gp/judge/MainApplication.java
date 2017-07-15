@@ -63,6 +63,7 @@ public class MainApplication extends Application {
 
 	@Override
 	public void stop() {
+		windowsControllerBean.close();
 		context.close();
 	}
 }

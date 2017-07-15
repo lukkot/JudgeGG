@@ -18,17 +18,23 @@ import pl.gymkhana_gp.judge.presentation.views.boards.ClassicProBoardControllerH
 import pl.gymkhana_gp.judge.presentation.views.boards.Gp8BoardControllerHelper;
 import pl.gymkhana_gp.judge.presentation.views.boards.PlayersBoardController;
 import pl.gymkhana_gp.judge.presentation.views.boards.TournamentBoardController;
+import pl.gymkhana_gp.judge.services.ClockService;
 
 @Component
 public class WindowsControllerBean {
 	@Autowired
 	private AbstractApplicationContext context;
+	
+	@Autowired
+	ClockService clockService;
 
 	private AnchorPane boardsChooserPane;
 	private AnchorPane playersBoardPane;
 	private BorderPane gp8BoardPane;
 	private BorderPane classicAmateurBoardPane;
 	private BorderPane classicProBoardPane;
+	
+	private AnchorPane optionsPane;
 
 	private BorderPane rootNode;
 
@@ -47,6 +53,10 @@ public class WindowsControllerBean {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+	
+	public void close() {
+		clockService.stopReading();
 	}
 
 	////////////////////////////////////////////////////////////////////////////////
@@ -71,6 +81,7 @@ public class WindowsControllerBean {
 		getGp8Board();
 		getClassicAmateurBoard();
 		getClassicProBoard();
+		getOptionsPane();
 
 		Tab tabPlayers = new Tab();
 		tabPlayers.setText("Zawodnicy");
@@ -92,10 +103,15 @@ public class WindowsControllerBean {
 		tabClassicPro.setContent(classicProBoardPane);
 		tabClassicPro.setOnSelectionChanged(event -> classicProBoardController.onTabSelected());
 
+		Tab tabOptions = new Tab();
+		tabOptions.setText("Opcje");
+		tabOptions.setContent(optionsPane);
+
 		((TabPane) boardsChooserPane.lookup("#boardsTabs")).getTabs().add(tabPlayers);
 		((TabPane) boardsChooserPane.lookup("#boardsTabs")).getTabs().add(tabGp8);
 		((TabPane) boardsChooserPane.lookup("#boardsTabs")).getTabs().add(tabClassicAmateur);
 		((TabPane) boardsChooserPane.lookup("#boardsTabs")).getTabs().add(tabClassicPro);
+		((TabPane) boardsChooserPane.lookup("#boardsTabs")).getTabs().add(tabOptions);
 	}
 
 	private AnchorPane getPlayersBoard() throws IOException {
@@ -159,6 +175,19 @@ public class WindowsControllerBean {
 		}
 
 		return classicProBoardPane;
+	}
+
+	private AnchorPane getOptionsPane() throws IOException {
+		if (optionsPane == null) {
+			FXMLLoader fxmlLoader = new FXMLLoader(
+					getClass().getResource("/pl/gymkhana_gp/judge/presentation/views/OptionsView.fxml"));
+			fxmlLoader.setControllerFactory(context::getBean);
+			fxmlLoader.setResources(ResourceBundle.getBundle("text-resources"));
+
+			optionsPane = fxmlLoader.load();
+		}
+
+		return optionsPane;
 	}
 
 	////////////////////////////////////////////////////////////////////////////////

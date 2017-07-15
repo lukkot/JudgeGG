@@ -32,7 +32,7 @@ public class ClockServiceTest {
 
 	@Test
 	public void shouldReturnDifferentTimeWhileStarted() throws InterruptedException {
-		doNothing().when(externalClockDaoImpl).open(anyString());
+		doNothing().when(externalClockDaoImpl).open(any());
 		doNothing().when(externalClockDaoImpl).close();
 		when(externalClockDaoImpl.readTime()).then(new Answer<TimeDto>() {
 			int index;

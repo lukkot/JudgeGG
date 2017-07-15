@@ -1,6 +1,7 @@
 package pl.gymkhana_gp.judge.services;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import javax.annotation.PostConstruct;
@@ -9,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import pl.gymkhana_gp.judge.model.dao.ExternalClockDaoImpl;
+import pl.gymkhana_gp.judge.model.dao.ExternalClockSettings;
 import pl.gymkhana_gp.judge.model.dto.TimeDto;
 
 @Component
@@ -17,7 +19,7 @@ public class ClockService implements Runnable {
 	@Autowired
 	ExternalClockDaoImpl externalClockDaoImpl;
 	
-	private String serialPortName = "";
+	private ExternalClockSettings externalClockSettings = new ExternalClockSettings();
 	private volatile TimeDto currentTime = new TimeDto(0);
 	private Thread readingThread;
 	private volatile boolean readData;
@@ -26,19 +28,19 @@ public class ClockService implements Runnable {
 	
 	@PostConstruct
 	public void init() {
-		startReading();
+//		startReading();
 	}
 	
 	@Override
 	public void run() {
-		externalClockDaoImpl.open(serialPortName);
+		externalClockDaoImpl.open(externalClockSettings);
 		
 		while(readData) {
 			TimeDto time = externalClockDaoImpl.readTime();
 			if(time != null) {
 				currentTime = time;
+				notifyObservers();
 			}
-			notifyObservers();
 			
 			try {
 				Thread.sleep(10);
@@ -89,11 +91,19 @@ public class ClockService implements Runnable {
 		}
 	}
 
-	public String getSerialPortName() {
-		return serialPortName;
+	public ExternalClockSettings getExternalClockSettings() {
+		return externalClockSettings;
 	}
 
-	public void setSerialPortName(String serialPortName) {
-		this.serialPortName = serialPortName;
+	public void setExternalClockSettings(ExternalClockSettings externalClockSettings) {
+		if(externalClockSettings == null) {
+			throw new IllegalArgumentException();
+		}
+		
+		this.externalClockSettings = externalClockSettings;
+	}
+	
+	public List<String> getSerialPorts() {
+		return externalClockDaoImpl.getPorts();
 	}
 }
