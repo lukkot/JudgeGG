@@ -6,11 +6,13 @@ import java.io.Reader;
 
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVRecord;
+import org.junit.Ignore;
 import org.junit.Test;
 
 public class CommonsCsvTest {
 
 	@Test
+	@Ignore
 	public void test() throws IOException {
 		Reader in = new FileReader("src\\test\\resources\\g16t_registrations_list_test_data.csv");
 		Iterable<CSVRecord> records = CSVFormat.EXCEL.parse(in);

@@ -53,9 +53,9 @@ public class ExternalClockDaoImpl {
 			while(read) {
 				int readBytes = serialPort.readBytes(byteBuffer, 1);
 				
-				if(readBytes > 0) {
-					System.out.println(readBytes + ": " + (char)byteBuffer[0] + "(" + (int)byteBuffer[0] + ")" + "|");
-				}
+//				if(readBytes > 0) {
+//					System.out.println(readBytes + ": " + (char)byteBuffer[0] + "(" + (int)byteBuffer[0] + ")" + "|");
+//				}
 				
 				if(readBytes <= 0) {
 					read = false;
@@ -65,13 +65,13 @@ public class ExternalClockDaoImpl {
 						buffer.deleteCharAt(0);
 					}
 				} else {
-					System.out.print("Decoding... ");
+//					System.out.print("Decoding... ");
 					time = translateBuffer();
 					if(time != null) {
 						read = false;
-						System.out.println(time.getTimeFormatted());
+//						System.out.println(time.getTimeFormatted());
 					} else {
-						System.out.println("failed.");
+//						System.out.println("failed.");
 					}
 				}
 			}

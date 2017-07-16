@@ -48,7 +48,7 @@ public class PlayerViewDataUtils {
 	
 			if (fullMeasurementDto1 != null) {
 				playerViewData.setTime1(fullMeasurementDto1.getTime().getTimeFormatted());
-				playerViewData.setPenalty1((int) fullMeasurementDto1.getPenaltyInSeconds());
+				playerViewData.setPenalty1((int) fullMeasurementDto1.getPenalty());
 			}
 	
 			FullMeasurementDto fullMeasurementDto2 = playerViewDataToPlayerDtoConverterHelper.getMeasurements(playerDto)
@@ -56,7 +56,7 @@ public class PlayerViewDataUtils {
 	
 			if (fullMeasurementDto2 != null) {
 				playerViewData.setTime2(fullMeasurementDto2.getTime().getTimeFormatted());
-				playerViewData.setPenalty2((int) fullMeasurementDto2.getPenaltyInSeconds());
+				playerViewData.setPenalty2((int) fullMeasurementDto2.getPenalty());
 			}
 		}
 

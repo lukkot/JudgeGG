@@ -71,6 +71,13 @@
 			<version>1.4</version>
 		</dependency>
 
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>3.5</version>
+
+		</dependency>
+
 		<!-- RS-232 -->
 		<dependency>
 			<groupId>com.fazecast</groupId>

@@ -49,8 +49,8 @@ public class ExternalClockDaoImplTest {
 
 	@Test
 	public void shouldReturnTwoTimesOneAfterTheOther() {
-		String time1 = "12:34.567";
-		String time2 = "24:58.123";
+		String time1 = "12:34,567";
+		String time2 = "24:58,123";
 		
 		externalClockDaoImpl.serialPort = mockSerialPortWithName("COM0");
 		

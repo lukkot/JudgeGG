@@ -14,12 +14,12 @@ import pl.gymkhana_gp.judge.model.enums.TournamentType;
 
 @Component
 public class TournamentDaoImpl {
-	GymkhanaTournamentDto gymkhanaTournamentData = new GymkhanaTournamentDto();
+	private GymkhanaTournamentDto gymkhanaTournamentData = new GymkhanaTournamentDto();
 
-	ISubtournamentDao emptySubtournamentDao = new EmptySubtournamentDaoImpl();
-	ISubtournamentDao gp8TournamentDao = new Gp8SubtournamentDaoImpl();
-	ISubtournamentDao classicAmateurTournamentDao = new ClassicSubtournamentDaoImpl(TournamentType.CLASSIC_AMATEUR);
-	ISubtournamentDao classicProTournamentDao = new ClassicSubtournamentDaoImpl(TournamentType.CLASSIC_PRO);
+	private ISubtournamentDao emptySubtournamentDao = new EmptySubtournamentDaoImpl();
+	private ISubtournamentDao gp8TournamentDao = new Gp8SubtournamentDaoImpl();
+	private ISubtournamentDao classicAmateurTournamentDao = new ClassicSubtournamentDaoImpl(TournamentType.CLASSIC_AMATEUR);
+	private ISubtournamentDao classicProTournamentDao = new ClassicSubtournamentDaoImpl(TournamentType.CLASSIC_PRO);
 
 	public GymkhanaTournamentDto getGymkhanaTournamentData() {
 		return gymkhanaTournamentData;
@@ -58,15 +58,14 @@ public class TournamentDaoImpl {
 	}
 
 	public void removePlayerData(final long id) {
-		gymkhanaTournamentData.getPlayersData().removeIf(playerData -> {
-			return playerData.getId() == id;
-		});
+		gymkhanaTournamentData.getPlayersData().removeIf(playerData -> playerData.getId() == id);
 	}
 
-	public void updatePlayerData(PlayerDto newPlayerDto) {
-		for (PlayerDto playerDto : gymkhanaTournamentData.getPlayersData()) {
+	public void updatePlayerData(final PlayerDto newPlayerDto, final TournamentType tournamentType) {
+		for (final PlayerDto playerDto : gymkhanaTournamentData.getPlayersData()) {
 			if (playerDto.getId() == newPlayerDto.getId()) {
-				playerDto.update(newPlayerDto);
+				playerDto.update(newPlayerDto, tournamentType);
+				break;
 			}
 		}
 	}

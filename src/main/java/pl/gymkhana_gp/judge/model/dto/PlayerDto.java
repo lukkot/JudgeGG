@@ -9,6 +9,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 import pl.gymkhana_gp.judge.model.enums.PlayerClass;
 import pl.gymkhana_gp.judge.model.enums.Sex;
+import pl.gymkhana_gp.judge.model.enums.TournamentType;
 
 @XmlRootElement
 public class PlayerDto {
@@ -58,15 +59,25 @@ public class PlayerDto {
 		classicMeasurements.add(MEASUREMENT_ROUND_2, null);
 	}
 
-	public void update(PlayerDto newPlayerDto) {
+	public void update(final PlayerDto newPlayerDto, final TournamentType tournamentType) {
 		setStartNumber(newPlayerDto.getStartNumber());
 		setFirstName(newPlayerDto.getFirstName());
 		setLastName(newPlayerDto.getLastName());
 		setNick(newPlayerDto.getNick());
 		setPlayerClass(newPlayerDto.getPlayerClass());
 		setSex(newPlayerDto.getSex());
-		setGp8Measurements(newPlayerDto.getGp8Measurements());
-		setClassicMeasurements(newPlayerDto.getClassicMeasurements());
+
+		switch (tournamentType) {
+			case GP8:
+				setGp8Measurements(newPlayerDto.getGp8Measurements());
+				break;
+			case CLASSIC_PRO:
+			case CLASSIC_AMATEUR:
+				setClassicMeasurements(newPlayerDto.getClassicMeasurements());
+				break;
+			default:
+				break;
+		}
 	}
 
 	@Override
@@ -141,7 +152,9 @@ public class PlayerDto {
 	}
 
 	public void setGp8Measurements(List<FullMeasurementDto> gp8Measurements) {
-		this.gp8Measurements = gp8Measurements;
+		if ((gp8Measurements != null) && (!gp8Measurements.isEmpty())) {
+			this.gp8Measurements = gp8Measurements;
+		}
 	}
 
 	@XmlElementWrapper

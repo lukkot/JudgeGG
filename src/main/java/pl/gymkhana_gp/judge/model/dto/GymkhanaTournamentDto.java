@@ -11,11 +11,6 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class GymkhanaTournamentDto {
 	private List<PlayerDto> players = new ArrayList<>();
 
-	public GymkhanaTournamentDto() {
-		players.add(new PlayerDto());
-		players.add(new PlayerDto());
-	}
-
 	@XmlElementWrapper
 	@XmlElement(name = "player")
 	public List<PlayerDto> getPlayersData() {
