@@ -65,12 +65,14 @@ public class ClockService implements Runnable {
 
 	public synchronized void stopReading() {
 		readData = false;
-		try {
-			readingThread.join();
-		} catch (InterruptedException e) {
-			e.printStackTrace();
+		if(readingThread != null) {
+			try {
+				readingThread.join();
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+			readingThread = null;
 		}
-		readingThread = null;
 	}
 
 	public TimeDto getTime() {
