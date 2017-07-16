@@ -3,14 +3,14 @@ package pl.gymkhana_gp.judge.model.dto.time;
 /**
  * Created by filus on 04.07.17.
  */
-class DoNotStart extends NotRegistered<DoNotStart> implements Comparable<TimeResult> {
+class DoNotStart extends NotRegistered<DoNotStart> implements Comparable<TimeResult<?>> {
 
 	DoNotStart() {
 		super(TimeResultType.DO_NOT_START);
 	}
 
 	@Override
-	public int compareTo(final TimeResult second) {
+	public int compareTo(final TimeResult<?> second) {
 		final int result;
 
 		if ((second == null) || (second instanceof NotYetStarted)) {

@@ -7,7 +7,7 @@ import java.time.Duration;
 /**
  * Created by filus on 04.07.17.
  */
-public class Registered implements TimeResult<Registered>, Comparable<TimeResult> {
+public class Registered implements TimeResult<Registered>, Comparable<TimeResult<?>> {
 	private final TimeResultType type = TimeResultType.REGISTERED;
 	private final Duration time;
 
@@ -54,7 +54,7 @@ public class Registered implements TimeResult<Registered>, Comparable<TimeResult
 	}
 
 	@Override
-	public int compareTo(final TimeResult second) {
+	public int compareTo(final TimeResult<?> second) {
 		final int result;
 
 		if (second instanceof Registered) {

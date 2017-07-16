@@ -1,12 +1,12 @@
 package pl.gymkhana_gp.judge.model.dto;
 
-import org.apache.commons.lang3.StringUtils;
-import pl.gymkhana_gp.judge.model.dto.time.TimeResult;
-
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
-import java.time.Duration;
+
+import org.apache.commons.lang3.StringUtils;
+
+import pl.gymkhana_gp.judge.model.dto.time.TimeResult;
 
 @XmlRootElement
 public class FullMeasurementDto {
@@ -49,8 +49,8 @@ public class FullMeasurementDto {
 	
 	@XmlTransient
 	public TimeDto getTimeWithPenalty() {
-		final TimeResult time = this.time.getTime();
-		final TimeResult fullTime = time.addPenalty(penalty);
+		final TimeResult<?> time = this.time.getTime();
+		final TimeResult<?> fullTime = time.addPenalty(penalty);
 		return new TimeDto(fullTime);
 	}
 	

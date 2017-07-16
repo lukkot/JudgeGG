@@ -11,8 +11,8 @@ public class TimeDtoComparator implements Comparator<TimeDto> {
 
 	@Override
 	public int compare(TimeDto timeDto1, TimeDto timeDto2) {
-		final TimeResult firstTime = timeDto1.getTime();
-		final TimeResult secondTime = timeDto2.getTime();
+		final TimeResult<?> firstTime = timeDto1.getTime();
+		final TimeResult<?> secondTime = timeDto2.getTime();
 
 		return Objects.compare(firstTime, secondTime, new TimeResultComparator());
 	}

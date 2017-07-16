@@ -1,18 +1,14 @@
 package pl.gymkhana_gp.judge.model.dto.time;
 
-import org.apache.commons.lang3.ObjectUtils;
-
-import java.time.Duration;
 import java.util.Comparator;
-import java.util.Objects;
 
 /**
  * Created by filus on 07.07.17.
  */
-public class TimeResultComparator implements Comparator<TimeResult> {
+public class TimeResultComparator implements Comparator<TimeResult<?>> {
 
 	@Override
-	public int compare(final TimeResult first, final TimeResult second) {
+	public int compare(final TimeResult<?> first, final TimeResult<?> second) {
 		final int result;
 
 		if (first == null) {
@@ -32,23 +28,23 @@ public class TimeResultComparator implements Comparator<TimeResult> {
 		return result;
 	}
 
-	private int compareNotYetStarted(final NotYetStarted first, final TimeResult second) {
+	private int compareNotYetStarted(final NotYetStarted first, final TimeResult<?> second) {
 		return first.compareTo(second);
 	}
 
-	private int compareRegistered(final Registered first, final TimeResult second) {
+	private int compareRegistered(final Registered first, final TimeResult<?> second) {
 		return first.compareTo(second);
 	}
 
-	private int compareDisqualified(final Disqualified first, final TimeResult second) {
+	private int compareDisqualified(final Disqualified first, final TimeResult<?> second) {
 		return first.compareTo(second);
 	}
 
-	private int compareDoNotFinish(final DoNotFinish first, final TimeResult second) {
+	private int compareDoNotFinish(final DoNotFinish first, final TimeResult<?> second) {
 		return first.compareTo(second);
 	}
 
-	private int compareDoNotStart(final DoNotStart first, final TimeResult second) {
+	private int compareDoNotStart(final DoNotStart first, final TimeResult<?> second) {
 		return first.compareTo(second);
 	}
 }

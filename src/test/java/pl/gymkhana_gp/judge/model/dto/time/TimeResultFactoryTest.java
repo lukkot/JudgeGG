@@ -16,7 +16,7 @@ public class TimeResultFactoryTest {
 		final String dns = "DNS";
 
 		//when
-		final TimeResult result = TimeResultFactory.obtainTimeResult(dns);
+		final TimeResult<?> result = TimeResultFactory.obtainTimeResult(dns);
 
 		//then
 		assertTrue(result instanceof DoNotStart);
@@ -29,7 +29,7 @@ public class TimeResultFactoryTest {
 		final String nys = "  ";
 
 		//when
-		final TimeResult result = TimeResultFactory.obtainTimeResult(nys);
+		final TimeResult<?> result = TimeResultFactory.obtainTimeResult(nys);
 
 		//then
 		assertTrue(result instanceof NotYetStarted);
@@ -42,7 +42,7 @@ public class TimeResultFactoryTest {
 		final String dnf = "DNF";
 
 		//when
-		final TimeResult result = TimeResultFactory.obtainTimeResult(dnf);
+		final TimeResult<?> result = TimeResultFactory.obtainTimeResult(dnf);
 
 		//then
 		assertTrue(result instanceof DoNotFinish);
@@ -55,7 +55,7 @@ public class TimeResultFactoryTest {
 		final String dsq = "DSQ";
 
 		//when
-		final TimeResult result = TimeResultFactory.obtainTimeResult(dsq);
+		final TimeResult<?> result = TimeResultFactory.obtainTimeResult(dsq);
 
 		//then
 		assertTrue(result instanceof Disqualified);
@@ -69,7 +69,7 @@ public class TimeResultFactoryTest {
 		final String expected = "01:23,050";
 
 		//when
-		final TimeResult result = TimeResultFactory.obtainTimeResult(time);
+		final TimeResult<?> result = TimeResultFactory.obtainTimeResult(time);
 
 		//then
 		assertTrue(result instanceof Registered);
