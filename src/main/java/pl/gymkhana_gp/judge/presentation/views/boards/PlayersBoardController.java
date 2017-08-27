@@ -1,22 +1,17 @@
 package pl.gymkhana_gp.judge.presentation.views.boards;
 
-import java.io.File;
-import java.io.IOException;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Scope;
-import org.springframework.stereotype.Component;
-import org.springframework.validation.Errors;
-
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.ComboBoxTableCell;
-import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.util.converter.IntegerStringConverter;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
+import org.springframework.validation.Errors;
 import pl.gymkhana_gp.judge.controllers.TournamentsControllerBean;
 import pl.gymkhana_gp.judge.converter.PlayerViewDataUtils;
 import pl.gymkhana_gp.judge.model.dto.PlayerDto;
@@ -25,9 +20,13 @@ import pl.gymkhana_gp.judge.presentation.model.PlayersBoardModel;
 import pl.gymkhana_gp.judge.presentation.views.AboutInfoController;
 import pl.gymkhana_gp.judge.presentation.views.FileLoaderController;
 import pl.gymkhana_gp.judge.presentation.views.MainWindowController;
+import pl.gymkhana_gp.judge.presentation.views.utils.EditCell;
 import pl.gymkhana_gp.judge.utils.validation.IOnDataChangedListener;
 import pl.gymkhana_gp.judge.utils.validation.IValidationErrorsListener;
 import pl.gymkhana_gp.judge.utils.validation.TableViewValidationHelperBean;
+
+import java.io.File;
+import java.io.IOException;
 
 @Component
 @Scope("prototype")
@@ -85,11 +84,11 @@ public class PlayersBoardController implements IValidationErrorsListener, IOnDat
 		tablePlayersColumnSex.setCellValueFactory(cellData -> cellData.getValue().getSex());
 		tablePlayersColumnPlayerClass.setCellValueFactory(cellData -> cellData.getValue().getPlayerClass());
 
-		tablePlayersColumnStartNumber.setCellFactory(
-				TextFieldTableCell.<PlayerViewData, Integer>forTableColumn(new IntegerStringConverter()));
-		tablePlayersColumnFirstName.setCellFactory(TextFieldTableCell.forTableColumn());
-		tablePlayersColumnLastName.setCellFactory(TextFieldTableCell.forTableColumn());
-		tablePlayersColumnNick.setCellFactory(TextFieldTableCell.forTableColumn());
+
+		tablePlayersColumnStartNumber.setCellFactory(column -> new EditCell<>(new IntegerStringConverter()));
+		tablePlayersColumnFirstName.setCellFactory(column -> EditCell.createStringEditCell());
+		tablePlayersColumnLastName.setCellFactory(column -> EditCell.createStringEditCell());
+		tablePlayersColumnNick.setCellFactory(column -> EditCell.createStringEditCell());
 		tablePlayersColumnSex.setCellFactory(ComboBoxTableCell.forTableColumn(PlayerViewData.getSexValues()));
 		tablePlayersColumnPlayerClass
 				.setCellFactory(ComboBoxTableCell.forTableColumn(PlayerViewData.getPlayerClassValues()));
@@ -106,6 +105,7 @@ public class PlayersBoardController implements IValidationErrorsListener, IOnDat
 				.setOnEditCommit(event -> tableViewValidationHelperBean.validateInput(event, "playerClass"));
 
 		tablePlayers.setItems(playersBoardModel.getPlayersViewData());
+
 		refreshPlayersData();
 	}
 
@@ -169,7 +169,7 @@ public class PlayersBoardController implements IValidationErrorsListener, IOnDat
 		fileChooser.getExtensionFilters()
 				.add(new FileChooser.ExtensionFilter("Plik zarejestrowanych zawodników (*.csv)", "*.csv"));
 
-		File selectedFile = fileChooser.showOpenDialog((Stage) rootPane.getScene().getWindow());
+		File selectedFile = fileChooser.showOpenDialog(rootPane.getScene().getWindow());
 
 		if (selectedFile != null) {
 			try {
