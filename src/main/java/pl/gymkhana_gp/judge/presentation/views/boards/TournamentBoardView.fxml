@@ -195,30 +195,30 @@
                      <tooltip>
                         <Tooltip text="Wybierz aktualnie rozgrywaną rundę" />
                      </tooltip></ComboBox>
-                  <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onPrintStartingList" prefHeight="35.0" prefWidth="35.0">
-                     <graphic>
-                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../../resources/icons/x24/printer-waiting.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                     <tooltip>
-                        <Tooltip text="Drukuj listę startową (aktualnie widoczną poniżej)" />
-                     </tooltip>
-                  </Button>
-                  <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onPrintScoreBoard" prefHeight="35.0" prefWidth="35.0">
-                     <graphic>
-                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../../resources/icons/x24/printer-scoreboard.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                     <tooltip>
-                        <Tooltip text="Drukuj tabelę wyników (aktualnie widoczną po prawej)" />
-                     </tooltip>
-                  </Button>
+                   <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onPrintScoreBoard" prefHeight="35.0" prefWidth="35.0">
+                       <graphic>
+                           <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                               <image>
+                                   <Image url="@../../resources/icons/x24/printer-scoreboard.png" />
+                               </image>
+                           </ImageView>
+                       </graphic>
+                       <tooltip>
+                           <Tooltip text="Drukuj tabelę wyników (aktualnie widoczną poniżej)" />
+                       </tooltip>
+                   </Button>
+                   <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onPrintStartingList" prefHeight="35.0" prefWidth="35.0">
+                       <graphic>
+                           <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                               <image>
+                                   <Image url="@../../resources/icons/x24/printer-waiting.png" />
+                               </image>
+                           </ImageView>
+                       </graphic>
+                       <tooltip>
+                           <Tooltip text="Drukuj listę startową (aktualnie widoczną po lewej)" />
+                       </tooltip>
+                   </Button>
                </children>
                <padding>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
