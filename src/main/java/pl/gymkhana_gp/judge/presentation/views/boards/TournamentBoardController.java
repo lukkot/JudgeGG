@@ -13,14 +13,12 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
-import javafx.scene.control.SplitPane;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
-import javafx.stage.Stage;
 import javafx.util.converter.NumberStringConverter;
 import pl.gymkhana_gp.judge.comparators.PlayerDtoComparator;
 import pl.gymkhana_gp.judge.comparators.PlayerDtoComparator.ComparisonType;
@@ -32,7 +30,7 @@ import pl.gymkhana_gp.judge.presentation.model.PlayerViewData;
 import pl.gymkhana_gp.judge.presentation.model.TournamentBoardModel;
 import pl.gymkhana_gp.judge.presentation.views.MainWindowController;
 import pl.gymkhana_gp.judge.presentation.views.boards.IBoardControllerHelper.ColumnType;
-import pl.gymkhana_gp.judge.presentation.views.printviews.PrintingController;
+import pl.gymkhana_gp.judge.presentation.views.printihelpersawt.PrintingAwtController;
 import pl.gymkhana_gp.judge.presentation.views.utils.AutoNumberedCell;
 import pl.gymkhana_gp.judge.presentation.views.utils.PlayerViewDataTableDecorator;
 import pl.gymkhana_gp.judge.utils.validation.IOnDataChangedListener;
@@ -66,15 +64,12 @@ public class TournamentBoardController
 	private PlayerViewDataTableDecorator playerViewDataTableDecorator;
 
 	@Autowired
-	private PrintingController printingController;
+	private PrintingAwtController printingAwtController;
 
 	private IBoardControllerHelper boardControllerHelper;
 
 	@FXML
 	private BorderPane rootPane;
-
-	@FXML
-	private SplitPane mainSplitPane;
 
 	@FXML
 	private ComboBox<String> comboRoundNumber;
@@ -265,14 +260,12 @@ public class TournamentBoardController
 		tournamentBoardModel.setCurrentPlayer(currentPlayer);
 	}
 
-	private List<PlayerViewData> sortWaitingPlayersList(List<PlayerViewData> waitingPlayersList, int roundNumber) {
+	private void sortWaitingPlayersList(List<PlayerViewData> waitingPlayersList, int roundNumber) {
 		if (roundNumber == 0) {
 			waitingPlayersList.sort(new PlayerDtoComparator(ComparisonType.START_NUMBER));
 		} else if (roundNumber == 1) {
 			waitingPlayersList.sort(new PlayerDtoComparator(ComparisonType.ROUND_1, true));
 		}
-
-		return waitingPlayersList;
 	}
 
 	// @SuppressWarnings("unchecked")
@@ -318,10 +311,6 @@ public class TournamentBoardController
 			labelCurrentPlayerLastName.setText(player.getLastName().get());
 			labelCurrentPlayerNick.setText(player.getNick().get());
 		}
-	}
-
-	public IBoardControllerHelper getBoardControllerHelper() {
-		return boardControllerHelper;
 	}
 
 	public void setBoardControllerHelper(IBoardControllerHelper boardControllerHelper) {
@@ -397,18 +386,6 @@ public class TournamentBoardController
 	}
 
 	@FXML
-	private void onWithdrawSelectedPlayer() {
-		PlayerViewData playerViewDataDoneSelected = tablePlayersDone.getSelectionModel().getSelectedItem();
-		if (playerViewDataDoneSelected == null) {
-			return;
-		}
-
-		boardControllerHelper.setPlayerCurrent(playerViewDataUtils.convert(playerViewDataDoneSelected));
-
-		refreshPaneData();
-	}
-
-	@FXML
 	private void onRoundChanged() {
 		refreshPaneData();
 	}
@@ -428,7 +405,7 @@ public class TournamentBoardController
 		try {
 			mainWindowController.clearMessages();
 			mainWindowController.addMessage("Drukuję...");
-			printingController.printWaitingList((Stage) rootPane.getScene().getWindow(), tournamentBoardModel);
+			printingAwtController.printWaitingList(tournamentBoardModel);
 			mainWindowController.clearMessages();
 			mainWindowController.addMessage("Koniec drukowania!");
 		} catch (IOException e) {
@@ -442,7 +419,7 @@ public class TournamentBoardController
 		try {
 			mainWindowController.clearMessages();
 			mainWindowController.addMessage("Drukuję...");
-			printingController.printScoreBoard((Stage) rootPane.getScene().getWindow(), tournamentBoardModel);
+			printingAwtController.printScoreBoardList(tournamentBoardModel);
 			mainWindowController.clearMessages();
 			mainWindowController.addMessage("Koniec drukowania!");
 		} catch (IOException e) {
@@ -461,7 +438,7 @@ public class TournamentBoardController
 	}
 
 	@FXML
-	private void onPenaltyAccepted(javafx.event.ActionEvent actionEvent) {
+	private void onPenaltyAccepted() {
 		rootPane.requestFocus();
 	}
 
@@ -476,7 +453,7 @@ public class TournamentBoardController
 	}
 
 	@FXML
-	private void onFreezClockClicked(javafx.event.ActionEvent actionEvent) {
+	private void onFreezClockClicked() {
 		updateClockListenerState();
 	}
 

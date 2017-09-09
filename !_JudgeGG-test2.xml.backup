@@ -9,9 +9,9 @@
             <firstName>Imię</firstName>
             <gp8Measurements>
                 <measurement>
-                    <penaltyInSeconds>1</penaltyInSeconds>
+                    <penalty>0</penalty>
                     <time>
-                        <value>00:00.123</value>
+                        <value>00:00,123</value>
                     </time>
                 </measurement>
                 <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
@@ -27,7 +27,75 @@
                 <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
                 <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
             </classicMeasurements>
-            <firstName>Krzysztof</firstName>
+            <firstName>Krzysztof1</firstName>
+            <gp8Measurements>
+                <measurement>
+                    <penalty>3</penalty>
+                    <time>
+                        <value>01:12,123</value>
+                    </time>
+                </measurement>
+                <measurement>
+                    <penalty>1</penalty>
+                    <time>
+                        <value>01:12,111</value>
+                    </time>
+                </measurement>
+            </gp8Measurements>
+            <lastName>Ä„ Ä… Ä† Ä‡ Ä� Ä™ Ĺ� Ĺ‚ Ĺ� Ĺ„ Ă“ Ăł Ĺš Ĺ› Ĺą Ĺş Ĺ» ĹĽ.</lastName>
+            <nick>uosiu</nick>
+            <playerClass>AMATEUR</playerClass>
+            <sex>MALE</sex>
+            <startNumber>555</startNumber>
+        </player>
+        <player>
+            <classicMeasurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </classicMeasurements>
+            <firstName>Krzysztof2</firstName>
+            <gp8Measurements>
+                <measurement>
+                    <penalty>5</penalty>
+                    <time>
+                        <value>01:10,123</value>
+                    </time>
+                </measurement>
+                <measurement>
+                    <penalty>1</penalty>
+                    <time>
+                        <value>01:15,123</value>
+                    </time>
+                </measurement>
+            </gp8Measurements>
+            <lastName>Ą ą Ć ć Ę ę Ł ł Ń ń Ó ó Ś ś Ź ź Ż ż.</lastName>
+            <nick>uosiu</nick>
+            <playerClass>AMATEUR</playerClass>
+            <sex>MALE</sex>
+            <startNumber>555</startNumber>
+        </player>
+        <player>
+            <classicMeasurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </classicMeasurements>
+            <firstName>Krzysztof3</firstName>
+            <gp8Measurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </gp8Measurements>
+            <lastName>Ą ą Ć ć Ę ę Ł ł Ń ń Ó ó Ś ś Ź ź Ż ż.</lastName>
+            <nick>uosiu</nick>
+            <playerClass>AMATEUR</playerClass>
+            <sex>MALE</sex>
+            <startNumber>555</startNumber>
+        </player>
+        <player>
+            <classicMeasurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </classicMeasurements>
+            <firstName>Krzysztof4</firstName>
             <gp8Measurements>
                 <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
                 <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
@@ -43,7 +111,7 @@
                 <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
                 <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
             </classicMeasurements>
-            <firstName>Krzysztof</firstName>
+            <firstName>Krzysztof5</firstName>
             <gp8Measurements>
                 <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
                 <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
@@ -59,48 +127,1024 @@
                 <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
                 <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
             </classicMeasurements>
-            <firstName>Krzysztof</firstName>
+            <firstName>Imię</firstName>
             <gp8Measurements>
                 <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
                 <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
             </gp8Measurements>
-            <lastName>Ą ą Ć ć Ę ę Ł ł Ń ń Ó ó Ś ś Ź ź Ż ż.</lastName>
-            <nick>uosiu</nick>
+            <lastName>Nazwisko</lastName>
+            <nick>Ksywa</nick>
             <playerClass>AMATEUR</playerClass>
             <sex>MALE</sex>
-            <startNumber>555</startNumber>
+            <startNumber>7</startNumber>
         </player>
         <player>
             <classicMeasurements>
                 <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
                 <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
             </classicMeasurements>
-            <firstName>Krzysztof</firstName>
+            <firstName>Imię</firstName>
             <gp8Measurements>
                 <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
                 <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
             </gp8Measurements>
-            <lastName>Ä„ Ä… Ä† Ä‡ Ä� Ä™ Ĺ� Ĺ‚ Ĺ� Ĺ„ Ă“ Ăł Ĺš Ĺ› Ĺą Ĺş Ĺ» ĹĽ.</lastName>
-            <nick>uosiu</nick>
+            <lastName>Nazwisko</lastName>
+            <nick>Ksywa</nick>
             <playerClass>AMATEUR</playerClass>
             <sex>MALE</sex>
-            <startNumber>555</startNumber>
+            <startNumber>8</startNumber>
         </player>
         <player>
             <classicMeasurements>
                 <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
                 <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
             </classicMeasurements>
-            <firstName>Krzysztof</firstName>
+            <firstName>Imię</firstName>
             <gp8Measurements>
                 <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
                 <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
             </gp8Measurements>
-            <lastName>Ą ą Ć ć Ę ę Ł ł Ń ń Ó ó Ś ś Ź ź Ż ż.</lastName>
-            <nick>uosiu</nick>
+            <lastName>Nazwisko</lastName>
+            <nick>Ksywa</nick>
             <playerClass>AMATEUR</playerClass>
             <sex>MALE</sex>
-            <startNumber>555</startNumber>
+            <startNumber>9</startNumber>
+        </player>
+        <player>
+            <classicMeasurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </classicMeasurements>
+            <firstName>Imię</firstName>
+            <gp8Measurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </gp8Measurements>
+            <lastName>Nazwisko</lastName>
+            <nick>Ksywa</nick>
+            <playerClass>AMATEUR</playerClass>
+            <sex>MALE</sex>
+            <startNumber>10</startNumber>
+        </player>
+        <player>
+            <classicMeasurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </classicMeasurements>
+            <firstName>Imię</firstName>
+            <gp8Measurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </gp8Measurements>
+            <lastName>Nazwisko</lastName>
+            <nick>Ksywa</nick>
+            <playerClass>AMATEUR</playerClass>
+            <sex>MALE</sex>
+            <startNumber>11</startNumber>
+        </player>
+        <player>
+            <classicMeasurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </classicMeasurements>
+            <firstName>Imię</firstName>
+            <gp8Measurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </gp8Measurements>
+            <lastName>Nazwisko</lastName>
+            <nick>Ksywa</nick>
+            <playerClass>AMATEUR</playerClass>
+            <sex>MALE</sex>
+            <startNumber>12</startNumber>
+        </player>
+        <player>
+            <classicMeasurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </classicMeasurements>
+            <firstName>Imię</firstName>
+            <gp8Measurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </gp8Measurements>
+            <lastName>Nazwisko</lastName>
+            <nick>Ksywa</nick>
+            <playerClass>AMATEUR</playerClass>
+            <sex>MALE</sex>
+            <startNumber>13</startNumber>
+        </player>
+        <player>
+            <classicMeasurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </classicMeasurements>
+            <firstName>Imię</firstName>
+            <gp8Measurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </gp8Measurements>
+            <lastName>Nazwisko</lastName>
+            <nick>Ksywa</nick>
+            <playerClass>AMATEUR</playerClass>
+            <sex>MALE</sex>
+            <startNumber>14</startNumber>
+        </player>
+        <player>
+            <classicMeasurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </classicMeasurements>
+            <firstName>Imię</firstName>
+            <gp8Measurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </gp8Measurements>
+            <lastName>Nazwisko</lastName>
+            <nick>Ksywa</nick>
+            <playerClass>AMATEUR</playerClass>
+            <sex>MALE</sex>
+            <startNumber>15</startNumber>
+        </player>
+        <player>
+            <classicMeasurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </classicMeasurements>
+            <firstName>Imię</firstName>
+            <gp8Measurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </gp8Measurements>
+            <lastName>Nazwisko</lastName>
+            <nick>Ksywa</nick>
+            <playerClass>AMATEUR</playerClass>
+            <sex>MALE</sex>
+            <startNumber>16</startNumber>
+        </player>
+        <player>
+            <classicMeasurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </classicMeasurements>
+            <firstName>Imię</firstName>
+            <gp8Measurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </gp8Measurements>
+            <lastName>Nazwisko</lastName>
+            <nick>Ksywa</nick>
+            <playerClass>AMATEUR</playerClass>
+            <sex>MALE</sex>
+            <startNumber>17</startNumber>
+        </player>
+        <player>
+            <classicMeasurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </classicMeasurements>
+            <firstName>Imię</firstName>
+            <gp8Measurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </gp8Measurements>
+            <lastName>Nazwisko</lastName>
+            <nick>Ksywa</nick>
+            <playerClass>AMATEUR</playerClass>
+            <sex>MALE</sex>
+            <startNumber>18</startNumber>
+        </player>
+        <player>
+            <classicMeasurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </classicMeasurements>
+            <firstName>Imię</firstName>
+            <gp8Measurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </gp8Measurements>
+            <lastName>Nazwisko</lastName>
+            <nick>Ksywa</nick>
+            <playerClass>AMATEUR</playerClass>
+            <sex>MALE</sex>
+            <startNumber>19</startNumber>
+        </player>
+        <player>
+            <classicMeasurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </classicMeasurements>
+            <firstName>Imię</firstName>
+            <gp8Measurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </gp8Measurements>
+            <lastName>Nazwisko</lastName>
+            <nick>Ksywa</nick>
+            <playerClass>AMATEUR</playerClass>
+            <sex>MALE</sex>
+            <startNumber>20</startNumber>
+        </player>
+        <player>
+            <classicMeasurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </classicMeasurements>
+            <firstName>Imię</firstName>
+            <gp8Measurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </gp8Measurements>
+            <lastName>Nazwisko</lastName>
+            <nick>Ksywa</nick>
+            <playerClass>AMATEUR</playerClass>
+            <sex>MALE</sex>
+            <startNumber>21</startNumber>
+        </player>
+        <player>
+            <classicMeasurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </classicMeasurements>
+            <firstName>Imię</firstName>
+            <gp8Measurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </gp8Measurements>
+            <lastName>Nazwisko</lastName>
+            <nick>Ksywa</nick>
+            <playerClass>AMATEUR</playerClass>
+            <sex>MALE</sex>
+            <startNumber>22</startNumber>
+        </player>
+        <player>
+            <classicMeasurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </classicMeasurements>
+            <firstName>Imię</firstName>
+            <gp8Measurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </gp8Measurements>
+            <lastName>Nazwisko</lastName>
+            <nick>Ksywa</nick>
+            <playerClass>AMATEUR</playerClass>
+            <sex>MALE</sex>
+            <startNumber>23</startNumber>
+        </player>
+        <player>
+            <classicMeasurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </classicMeasurements>
+            <firstName>Imię</firstName>
+            <gp8Measurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </gp8Measurements>
+            <lastName>Nazwisko</lastName>
+            <nick>Ksywa</nick>
+            <playerClass>AMATEUR</playerClass>
+            <sex>MALE</sex>
+            <startNumber>24</startNumber>
+        </player>
+        <player>
+            <classicMeasurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </classicMeasurements>
+            <firstName>Imię</firstName>
+            <gp8Measurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </gp8Measurements>
+            <lastName>Nazwisko</lastName>
+            <nick>Ksywa</nick>
+            <playerClass>AMATEUR</playerClass>
+            <sex>MALE</sex>
+            <startNumber>25</startNumber>
+        </player>
+        <player>
+            <classicMeasurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </classicMeasurements>
+            <firstName>Imię</firstName>
+            <gp8Measurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </gp8Measurements>
+            <lastName>Nazwisko</lastName>
+            <nick>Ksywa</nick>
+            <playerClass>AMATEUR</playerClass>
+            <sex>MALE</sex>
+            <startNumber>26</startNumber>
+        </player>
+        <player>
+            <classicMeasurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </classicMeasurements>
+            <firstName>Imię</firstName>
+            <gp8Measurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </gp8Measurements>
+            <lastName>Nazwisko</lastName>
+            <nick>Ksywa</nick>
+            <playerClass>AMATEUR</playerClass>
+            <sex>MALE</sex>
+            <startNumber>27</startNumber>
+        </player>
+        <player>
+            <classicMeasurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </classicMeasurements>
+            <firstName>Imię</firstName>
+            <gp8Measurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </gp8Measurements>
+            <lastName>Nazwisko</lastName>
+            <nick>Ksywa</nick>
+            <playerClass>AMATEUR</playerClass>
+            <sex>MALE</sex>
+            <startNumber>28</startNumber>
+        </player>
+        <player>
+            <classicMeasurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </classicMeasurements>
+            <firstName>Imię</firstName>
+            <gp8Measurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </gp8Measurements>
+            <lastName>Nazwisko</lastName>
+            <nick>Ksywa</nick>
+            <playerClass>AMATEUR</playerClass>
+            <sex>MALE</sex>
+            <startNumber>29</startNumber>
+        </player>
+        <player>
+            <classicMeasurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </classicMeasurements>
+            <firstName>Imię</firstName>
+            <gp8Measurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </gp8Measurements>
+            <lastName>Nazwisko</lastName>
+            <nick>Ksywa</nick>
+            <playerClass>AMATEUR</playerClass>
+            <sex>MALE</sex>
+            <startNumber>30</startNumber>
+        </player>
+        <player>
+            <classicMeasurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </classicMeasurements>
+            <firstName>Imię</firstName>
+            <gp8Measurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </gp8Measurements>
+            <lastName>Nazwisko</lastName>
+            <nick>Ksywa</nick>
+            <playerClass>AMATEUR</playerClass>
+            <sex>MALE</sex>
+            <startNumber>31</startNumber>
+        </player>
+        <player>
+            <classicMeasurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </classicMeasurements>
+            <firstName>Imię</firstName>
+            <gp8Measurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </gp8Measurements>
+            <lastName>Nazwisko</lastName>
+            <nick>Ksywa</nick>
+            <playerClass>AMATEUR</playerClass>
+            <sex>MALE</sex>
+            <startNumber>32</startNumber>
+        </player>
+        <player>
+            <classicMeasurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </classicMeasurements>
+            <firstName>Imię</firstName>
+            <gp8Measurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </gp8Measurements>
+            <lastName>Nazwisko</lastName>
+            <nick>Ksywa</nick>
+            <playerClass>AMATEUR</playerClass>
+            <sex>MALE</sex>
+            <startNumber>33</startNumber>
+        </player>
+        <player>
+            <classicMeasurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </classicMeasurements>
+            <firstName>Imię</firstName>
+            <gp8Measurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </gp8Measurements>
+            <lastName>Nazwisko</lastName>
+            <nick>Ksywa</nick>
+            <playerClass>AMATEUR</playerClass>
+            <sex>MALE</sex>
+            <startNumber>34</startNumber>
+        </player>
+        <player>
+            <classicMeasurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </classicMeasurements>
+            <firstName>Imię</firstName>
+            <gp8Measurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </gp8Measurements>
+            <lastName>Nazwisko</lastName>
+            <nick>Ksywa</nick>
+            <playerClass>AMATEUR</playerClass>
+            <sex>MALE</sex>
+            <startNumber>35</startNumber>
+        </player>
+        <player>
+            <classicMeasurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </classicMeasurements>
+            <firstName>Imię</firstName>
+            <gp8Measurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </gp8Measurements>
+            <lastName>Nazwisko</lastName>
+            <nick>Ksywa</nick>
+            <playerClass>AMATEUR</playerClass>
+            <sex>MALE</sex>
+            <startNumber>36</startNumber>
+        </player>
+        <player>
+            <classicMeasurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </classicMeasurements>
+            <firstName>Imię</firstName>
+            <gp8Measurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </gp8Measurements>
+            <lastName>Nazwisko</lastName>
+            <nick>Ksywa</nick>
+            <playerClass>AMATEUR</playerClass>
+            <sex>MALE</sex>
+            <startNumber>37</startNumber>
+        </player>
+        <player>
+            <classicMeasurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </classicMeasurements>
+            <firstName>Imię</firstName>
+            <gp8Measurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </gp8Measurements>
+            <lastName>Nazwisko</lastName>
+            <nick>Ksywa</nick>
+            <playerClass>AMATEUR</playerClass>
+            <sex>MALE</sex>
+            <startNumber>38</startNumber>
+        </player>
+        <player>
+            <classicMeasurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </classicMeasurements>
+            <firstName>Imię</firstName>
+            <gp8Measurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </gp8Measurements>
+            <lastName>Nazwisko</lastName>
+            <nick>Ksywa</nick>
+            <playerClass>AMATEUR</playerClass>
+            <sex>MALE</sex>
+            <startNumber>39</startNumber>
+        </player>
+        <player>
+            <classicMeasurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </classicMeasurements>
+            <firstName>Imię</firstName>
+            <gp8Measurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </gp8Measurements>
+            <lastName>Nazwisko</lastName>
+            <nick>Ksywa</nick>
+            <playerClass>AMATEUR</playerClass>
+            <sex>MALE</sex>
+            <startNumber>40</startNumber>
+        </player>
+        <player>
+            <classicMeasurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </classicMeasurements>
+            <firstName>Imię</firstName>
+            <gp8Measurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </gp8Measurements>
+            <lastName>Nazwisko</lastName>
+            <nick>Ksywa</nick>
+            <playerClass>AMATEUR</playerClass>
+            <sex>MALE</sex>
+            <startNumber>41</startNumber>
+        </player>
+        <player>
+            <classicMeasurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </classicMeasurements>
+            <firstName>Imię</firstName>
+            <gp8Measurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </gp8Measurements>
+            <lastName>Nazwisko</lastName>
+            <nick>Ksywa</nick>
+            <playerClass>AMATEUR</playerClass>
+            <sex>MALE</sex>
+            <startNumber>42</startNumber>
+        </player>
+        <player>
+            <classicMeasurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </classicMeasurements>
+            <firstName>Imię</firstName>
+            <gp8Measurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </gp8Measurements>
+            <lastName>Nazwisko</lastName>
+            <nick>Ksywa</nick>
+            <playerClass>AMATEUR</playerClass>
+            <sex>MALE</sex>
+            <startNumber>43</startNumber>
+        </player>
+        <player>
+            <classicMeasurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </classicMeasurements>
+            <firstName>Imię</firstName>
+            <gp8Measurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </gp8Measurements>
+            <lastName>Nazwisko</lastName>
+            <nick>Ksywa</nick>
+            <playerClass>AMATEUR</playerClass>
+            <sex>MALE</sex>
+            <startNumber>44</startNumber>
+        </player>
+        <player>
+            <classicMeasurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </classicMeasurements>
+            <firstName>Imię</firstName>
+            <gp8Measurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </gp8Measurements>
+            <lastName>Nazwisko</lastName>
+            <nick>Ksywa</nick>
+            <playerClass>AMATEUR</playerClass>
+            <sex>MALE</sex>
+            <startNumber>45</startNumber>
+        </player>
+        <player>
+            <classicMeasurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </classicMeasurements>
+            <firstName>Imię</firstName>
+            <gp8Measurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </gp8Measurements>
+            <lastName>Nazwisko</lastName>
+            <nick>Ksywa</nick>
+            <playerClass>AMATEUR</playerClass>
+            <sex>MALE</sex>
+            <startNumber>46</startNumber>
+        </player>
+        <player>
+            <classicMeasurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </classicMeasurements>
+            <firstName>Imię</firstName>
+            <gp8Measurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </gp8Measurements>
+            <lastName>Nazwisko</lastName>
+            <nick>Ksywa</nick>
+            <playerClass>AMATEUR</playerClass>
+            <sex>MALE</sex>
+            <startNumber>47</startNumber>
+        </player>
+        <player>
+            <classicMeasurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </classicMeasurements>
+            <firstName>Imię</firstName>
+            <gp8Measurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </gp8Measurements>
+            <lastName>Nazwisko</lastName>
+            <nick>Ksywa</nick>
+            <playerClass>AMATEUR</playerClass>
+            <sex>MALE</sex>
+            <startNumber>48</startNumber>
+        </player>
+        <player>
+            <classicMeasurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </classicMeasurements>
+            <firstName>Imię</firstName>
+            <gp8Measurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </gp8Measurements>
+            <lastName>Nazwisko</lastName>
+            <nick>Ksywa</nick>
+            <playerClass>AMATEUR</playerClass>
+            <sex>MALE</sex>
+            <startNumber>49</startNumber>
+        </player>
+        <player>
+            <classicMeasurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </classicMeasurements>
+            <firstName>Imię</firstName>
+            <gp8Measurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </gp8Measurements>
+            <lastName>Nazwisko</lastName>
+            <nick>Ksywa</nick>
+            <playerClass>AMATEUR</playerClass>
+            <sex>MALE</sex>
+            <startNumber>50</startNumber>
+        </player>
+        <player>
+            <classicMeasurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </classicMeasurements>
+            <firstName>Imię</firstName>
+            <gp8Measurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </gp8Measurements>
+            <lastName>Nazwisko</lastName>
+            <nick>Ksywa</nick>
+            <playerClass>AMATEUR</playerClass>
+            <sex>MALE</sex>
+            <startNumber>51</startNumber>
+        </player>
+        <player>
+            <classicMeasurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </classicMeasurements>
+            <firstName>Imię</firstName>
+            <gp8Measurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </gp8Measurements>
+            <lastName>Nazwisko</lastName>
+            <nick>Ksywa</nick>
+            <playerClass>AMATEUR</playerClass>
+            <sex>MALE</sex>
+            <startNumber>52</startNumber>
+        </player>
+        <player>
+            <classicMeasurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </classicMeasurements>
+            <firstName>Imię</firstName>
+            <gp8Measurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </gp8Measurements>
+            <lastName>Nazwisko</lastName>
+            <nick>Ksywa</nick>
+            <playerClass>AMATEUR</playerClass>
+            <sex>MALE</sex>
+            <startNumber>53</startNumber>
+        </player>
+        <player>
+            <classicMeasurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </classicMeasurements>
+            <firstName>Imię</firstName>
+            <gp8Measurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </gp8Measurements>
+            <lastName>Nazwisko</lastName>
+            <nick>Ksywa</nick>
+            <playerClass>AMATEUR</playerClass>
+            <sex>MALE</sex>
+            <startNumber>54</startNumber>
+        </player>
+        <player>
+            <classicMeasurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </classicMeasurements>
+            <firstName>Imię</firstName>
+            <gp8Measurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </gp8Measurements>
+            <lastName>Nazwisko</lastName>
+            <nick>Ksywa</nick>
+            <playerClass>AMATEUR</playerClass>
+            <sex>MALE</sex>
+            <startNumber>55</startNumber>
+        </player>
+        <player>
+            <classicMeasurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </classicMeasurements>
+            <firstName>Imię</firstName>
+            <gp8Measurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </gp8Measurements>
+            <lastName>Nazwisko</lastName>
+            <nick>Ksywa</nick>
+            <playerClass>AMATEUR</playerClass>
+            <sex>MALE</sex>
+            <startNumber>56</startNumber>
+        </player>
+        <player>
+            <classicMeasurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </classicMeasurements>
+            <firstName>Imię</firstName>
+            <gp8Measurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </gp8Measurements>
+            <lastName>Nazwisko</lastName>
+            <nick>Ksywa</nick>
+            <playerClass>AMATEUR</playerClass>
+            <sex>MALE</sex>
+            <startNumber>57</startNumber>
+        </player>
+        <player>
+            <classicMeasurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </classicMeasurements>
+            <firstName>Imię</firstName>
+            <gp8Measurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </gp8Measurements>
+            <lastName>Nazwisko</lastName>
+            <nick>Ksywa</nick>
+            <playerClass>AMATEUR</playerClass>
+            <sex>MALE</sex>
+            <startNumber>58</startNumber>
+        </player>
+        <player>
+            <classicMeasurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </classicMeasurements>
+            <firstName>Imię</firstName>
+            <gp8Measurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </gp8Measurements>
+            <lastName>Nazwisko</lastName>
+            <nick>Ksywa</nick>
+            <playerClass>AMATEUR</playerClass>
+            <sex>MALE</sex>
+            <startNumber>59</startNumber>
+        </player>
+        <player>
+            <classicMeasurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </classicMeasurements>
+            <firstName>Imię</firstName>
+            <gp8Measurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </gp8Measurements>
+            <lastName>Nazwisko</lastName>
+            <nick>Ksywa</nick>
+            <playerClass>AMATEUR</playerClass>
+            <sex>MALE</sex>
+            <startNumber>60</startNumber>
+        </player>
+        <player>
+            <classicMeasurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </classicMeasurements>
+            <firstName>Imię</firstName>
+            <gp8Measurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </gp8Measurements>
+            <lastName>Nazwisko</lastName>
+            <nick>Ksywa</nick>
+            <playerClass>AMATEUR</playerClass>
+            <sex>MALE</sex>
+            <startNumber>61</startNumber>
+        </player>
+        <player>
+            <classicMeasurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </classicMeasurements>
+            <firstName>Imię</firstName>
+            <gp8Measurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </gp8Measurements>
+            <lastName>Nazwisko</lastName>
+            <nick>Ksywa</nick>
+            <playerClass>AMATEUR</playerClass>
+            <sex>MALE</sex>
+            <startNumber>62</startNumber>
+        </player>
+        <player>
+            <classicMeasurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </classicMeasurements>
+            <firstName>Imię</firstName>
+            <gp8Measurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </gp8Measurements>
+            <lastName>Nazwisko</lastName>
+            <nick>Ksywa</nick>
+            <playerClass>AMATEUR</playerClass>
+            <sex>MALE</sex>
+            <startNumber>63</startNumber>
+        </player>
+        <player>
+            <classicMeasurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </classicMeasurements>
+            <firstName>Imię</firstName>
+            <gp8Measurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </gp8Measurements>
+            <lastName>Nazwisko</lastName>
+            <nick>Ksywa</nick>
+            <playerClass>AMATEUR</playerClass>
+            <sex>MALE</sex>
+            <startNumber>64</startNumber>
+        </player>
+        <player>
+            <classicMeasurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </classicMeasurements>
+            <firstName>Imię</firstName>
+            <gp8Measurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </gp8Measurements>
+            <lastName>Nazwisko</lastName>
+            <nick>Ksywa</nick>
+            <playerClass>AMATEUR</playerClass>
+            <sex>MALE</sex>
+            <startNumber>65</startNumber>
+        </player>
+        <player>
+            <classicMeasurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </classicMeasurements>
+            <firstName>Imię</firstName>
+            <gp8Measurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </gp8Measurements>
+            <lastName>Nazwisko</lastName>
+            <nick>Ksywa</nick>
+            <playerClass>AMATEUR</playerClass>
+            <sex>MALE</sex>
+            <startNumber>66</startNumber>
+        </player>
+        <player>
+            <classicMeasurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </classicMeasurements>
+            <firstName>Imię</firstName>
+            <gp8Measurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </gp8Measurements>
+            <lastName>Nazwisko</lastName>
+            <nick>Ksywa</nick>
+            <playerClass>AMATEUR</playerClass>
+            <sex>MALE</sex>
+            <startNumber>67</startNumber>
+        </player>
+        <player>
+            <classicMeasurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </classicMeasurements>
+            <firstName>Imię</firstName>
+            <gp8Measurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </gp8Measurements>
+            <lastName>Nazwisko</lastName>
+            <nick>Ksywa</nick>
+            <playerClass>AMATEUR</playerClass>
+            <sex>MALE</sex>
+            <startNumber>68</startNumber>
+        </player>
+        <player>
+            <classicMeasurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </classicMeasurements>
+            <firstName>Imię</firstName>
+            <gp8Measurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </gp8Measurements>
+            <lastName>Nazwisko</lastName>
+            <nick>Ksywa</nick>
+            <playerClass>AMATEUR</playerClass>
+            <sex>MALE</sex>
+            <startNumber>69</startNumber>
+        </player>
+        <player>
+            <classicMeasurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </classicMeasurements>
+            <firstName>Imię</firstName>
+            <gp8Measurements>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <measurement xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            </gp8Measurements>
+            <lastName>Nazwisko</lastName>
+            <nick>Ksywa</nick>
+            <playerClass>AMATEUR</playerClass>
+            <sex>MALE</sex>
+            <startNumber>70</startNumber>
         </player>
     </playersData>
 </gymkhanaTournament>
