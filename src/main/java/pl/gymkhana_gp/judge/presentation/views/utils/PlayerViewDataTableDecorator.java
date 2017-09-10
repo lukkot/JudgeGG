@@ -23,6 +23,8 @@ public class PlayerViewDataTableDecorator {
 	private final static int COLOR_PRO = 2;
 	private final static int COLOR_SIZE = 3;
 
+	private static final String COLOR_LAST_RIDING = "#ffff66";
+
 	private final String backgroundColor[][][];
 
 	public PlayerViewDataTableDecorator() {
@@ -44,7 +46,7 @@ public class PlayerViewDataTableDecorator {
 		backgroundColor[COLOR_PRO][COLOR_ROUND_OTHER][COLOR_ROW_SECOND] = "#e9e9ff";
 	}
 
-	public TableRow<PlayerViewData> getRowDecorated(int roundNumber) {
+	public TableRow<PlayerViewData> getRowDecorated(int roundNumber, long lastPlayerDataId) {
 		return new TableRow<PlayerViewData>() {
 			@Override
 			public void updateItem(PlayerViewData item, boolean empty) {
@@ -58,19 +60,22 @@ public class PlayerViewDataTableDecorator {
 			}
 
 			private void setStyle(PlayerViewData item, int roundNumber) {
-//				int playerType = getPlayerType(item);
-				int playerType = COLOR_AMATEUR;
+
 				int playerRound = getPlayerRound(item, roundNumber);
 				int rowType = getRowType(getIndex());
 
-				if (playerRound != COLOR_ROUND_OTHER) {
-					setStyle("-fx-background-color: " + backgroundColor[playerType][playerRound][rowType] + ";");
+				if(item.getPlayerDataId() == lastPlayerDataId) {
+					setStyle("-fx-background-color: " + COLOR_LAST_RIDING + ";");
+				} else if (playerRound != COLOR_ROUND_OTHER) {
+					setStyle("-fx-background-color: " + backgroundColor[COLOR_AMATEUR][playerRound][rowType] + ";");
+				} else {
+					setStyle("");
 				}
 			}
 		};
 	}
 
-	public TableCell<PlayerViewData, String> getCellDecoratedSex(int roundNumber) {
+	public TableCell<PlayerViewData, String> getCellDecoratedSex() {
 		return new TableCell<PlayerViewData, String>() {
 			@Override
 			public void updateItem(String item, boolean empty) {
@@ -96,7 +101,7 @@ public class PlayerViewDataTableDecorator {
 		};
 	}
 
-	public TableCell<PlayerViewData, String> getCellDecoratedPlayerClass(int roundNumber) {
+	public TableCell<PlayerViewData, String> getCellDecoratedPlayerClass() {
 		return new TableCell<PlayerViewData, String>() {
 			@Override
 			public void updateItem(String item, boolean empty) {

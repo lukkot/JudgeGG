@@ -20,8 +20,8 @@ import pl.gymkhana_gp.judge.presentation.views.FileLoaderController;
 @PropertySource("classpath:application.properties")
 public class MainApplication extends Application {
 
-	AbstractApplicationContext context;
-	WindowsControllerBean windowsControllerBean;
+	private AbstractApplicationContext context;
+	private WindowsControllerBean windowsControllerBean;
 
 	public static void main(String[] args) {
 		launch(args);

@@ -144,6 +144,8 @@ public class TournamentBoardController
 	@FXML
 	private ToggleButton toggleButtonClockListener;
 
+	private long lastPlayerDataId = -1;
+
 	@FXML
 	private void initialize() {
 		initOtherObjects();
@@ -212,11 +214,11 @@ public class TournamentBoardController
 	private void setEmphasizationToScoreTable() {
 		int roundNumber = getRoundNumberSelected();
 
-		tablePlayersDone.setRowFactory(tv -> playerViewDataTableDecorator.getRowDecorated(roundNumber));
+		tablePlayersDone.setRowFactory(tv -> playerViewDataTableDecorator.getRowDecorated(roundNumber, lastPlayerDataId));
 
 		tablePlayersDoneColumnPlayerClass
-				.setCellFactory(tc -> playerViewDataTableDecorator.getCellDecoratedPlayerClass(roundNumber));
-		tablePlayersDoneColumnSex.setCellFactory(tc -> playerViewDataTableDecorator.getCellDecoratedSex(roundNumber));
+				.setCellFactory(tc -> playerViewDataTableDecorator.getCellDecoratedPlayerClass());
+		tablePlayersDoneColumnSex.setCellFactory(tc -> playerViewDataTableDecorator.getCellDecoratedSex());
 	}
 
 	public void onTabSelected() {
@@ -349,6 +351,8 @@ public class TournamentBoardController
 		tournamentControllerBean.updatePlayerData(playerViewDataUtils.convert(playerViewDataCurrent), tournamentType);
 		boardControllerHelper.setPlayerCurrent(null);
 
+		lastPlayerDataId = -1;
+
 		refreshPaneData();
 	}
 
@@ -363,8 +367,11 @@ public class TournamentBoardController
 
 		final TournamentType tournamentType = getTournamentType();
 
+		lastPlayerDataId = playerViewDataAccepted.getPlayerDataId();
+
 		tournamentControllerBean.updatePlayerData(playerViewDataUtils.convert(playerViewDataAccepted), tournamentType);
 		boardControllerHelper.setPlayerCurrent(null);
+
 		refreshPaneData();
 	}
 
