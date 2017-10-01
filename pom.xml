@@ -51,6 +51,15 @@
 			<version>${mockito.version}</version>
 		</dependency>
 
+		<!-- https://mvnrepository.com/artifact/org.springframework/spring-test -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<version>4.3.11.RELEASE</version>
+			<scope>test</scope>
+		</dependency>
+
+
 		<!-- WALIDACJA -->
 		<dependency>
 			<groupId>javax.validation</groupId>

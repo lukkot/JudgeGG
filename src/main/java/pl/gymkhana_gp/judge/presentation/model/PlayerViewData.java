@@ -21,6 +21,7 @@ import pl.gymkhana_gp.judge.model.dto.FullMeasurementDto;
 import pl.gymkhana_gp.judge.model.dto.TimeDto;
 import pl.gymkhana_gp.judge.model.enums.PlayerClass;
 import pl.gymkhana_gp.judge.model.enums.Sex;
+import pl.gymkhana_gp.judge.utils.TimeMath;
 
 public class PlayerViewData implements ChangeListener<Object> {
 	
@@ -122,9 +123,7 @@ public class PlayerViewData implements ChangeListener<Object> {
 	}
 
 	private void calculateBest() {
-		List<FullMeasurementDto> sortedMeasurements = new ArrayList<>(measurements);
-		sortedMeasurements.sort(new FullMeasurementDtoComparator());
-		FullMeasurementDto bestFullMeasurement = sortedMeasurements.get(0);
+		FullMeasurementDto bestFullMeasurement = TimeMath.getBestMeasurement(measurements);
 
 		if (bestFullMeasurement == null) {
 			timeBest.set("");

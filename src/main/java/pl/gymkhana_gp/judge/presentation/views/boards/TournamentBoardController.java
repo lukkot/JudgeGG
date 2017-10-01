@@ -20,8 +20,8 @@ import javafx.scene.control.ToggleButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.util.converter.NumberStringConverter;
-import pl.gymkhana_gp.judge.comparators.PlayerDtoComparator;
-import pl.gymkhana_gp.judge.comparators.PlayerDtoComparator.ComparisonType;
+import pl.gymkhana_gp.judge.comparators.PlayerViewDataComparator;
+import pl.gymkhana_gp.judge.comparators.PlayerViewDataComparator.ComparisonType;
 import pl.gymkhana_gp.judge.controllers.TournamentsControllerBean;
 import pl.gymkhana_gp.judge.converter.PlayerViewDataUtils;
 import pl.gymkhana_gp.judge.model.dto.PlayerDto;
@@ -255,7 +255,7 @@ public class TournamentBoardController
 
 		List<PlayerViewData> donePlayers = playerViewDataUtils
 				.convert(boardControllerHelper.getPlayersDone(roundNumber));
-		donePlayers.sort(new PlayerDtoComparator(ComparisonType.ROUND_BEST));
+		donePlayers.sort(new PlayerViewDataComparator(ComparisonType.ROUND_BEST));
 		tournamentBoardModel.setDonePlayersList(donePlayers);
 
 		PlayerViewData currentPlayer = playerViewDataUtils.convert(boardControllerHelper.getPlayerCurrent());
@@ -264,9 +264,9 @@ public class TournamentBoardController
 
 	private void sortWaitingPlayersList(List<PlayerViewData> waitingPlayersList, int roundNumber) {
 		if (roundNumber == 0) {
-			waitingPlayersList.sort(new PlayerDtoComparator(ComparisonType.START_NUMBER));
+			waitingPlayersList.sort(new PlayerViewDataComparator(ComparisonType.START_NUMBER));
 		} else if (roundNumber == 1) {
-			waitingPlayersList.sort(new PlayerDtoComparator(ComparisonType.ROUND_1, true));
+			waitingPlayersList.sort(new PlayerViewDataComparator(ComparisonType.ROUND_1, true));
 		}
 	}
 
