@@ -3,6 +3,9 @@ package pl.gymkhana_gp.judge.controllers;
 import java.io.IOException;
 import java.util.ResourceBundle;
 
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.stereotype.Component;
@@ -22,11 +25,14 @@ import pl.gymkhana_gp.judge.services.ClockService;
 
 @Component
 public class WindowsControllerBean {
+
+	private static final Logger LOG = LogManager.getLogger(WindowsControllerBean.class);
+
 	@Autowired
 	private AbstractApplicationContext context;
 	
 	@Autowired
-	ClockService clockService;
+	private ClockService clockService;
 
 	private AnchorPane boardsChooserPane;
 	private AnchorPane playersBoardPane;
@@ -50,8 +56,7 @@ public class WindowsControllerBean {
 		try {
 			rootNode.setCenter(getBoardsChooserPane());
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			LOG.error("Problem with showing board chooser.", e);
 		}
 	}
 	
@@ -114,7 +119,7 @@ public class WindowsControllerBean {
 		((TabPane) boardsChooserPane.lookup("#boardsTabs")).getTabs().add(tabOptions);
 	}
 
-	private AnchorPane getPlayersBoard() throws IOException {
+	private void getPlayersBoard() throws IOException {
 		if (playersBoardPane == null) {
 			FXMLLoader fxmlLoader = new FXMLLoader(
 					getClass().getResource("/pl/gymkhana_gp/judge/presentation/views/boards/PlayersBoardView.fxml"));
@@ -126,10 +131,9 @@ public class WindowsControllerBean {
 			playersBoardController = fxmlLoader.getController();
 		}
 
-		return playersBoardPane;
 	}
 
-	private BorderPane getGp8Board() throws IOException {
+	private void getGp8Board() throws IOException {
 		if (gp8BoardPane == null) {
 			FXMLLoader fxmlLoader = new FXMLLoader(
 					getClass().getResource("/pl/gymkhana_gp/judge/presentation/views/boards/TournamentBoardView.fxml"));
@@ -142,10 +146,9 @@ public class WindowsControllerBean {
 			gp8BoardController.setBoardControllerHelper(new Gp8BoardControllerHelper());
 		}
 
-		return gp8BoardPane;
 	}
 
-	private BorderPane getClassicAmateurBoard() throws IOException {
+	private void getClassicAmateurBoard() throws IOException {
 		if (classicAmateurBoardPane == null) {
 			FXMLLoader fxmlLoader = new FXMLLoader(
 					getClass().getResource("/pl/gymkhana_gp/judge/presentation/views/boards/TournamentBoardView.fxml"));
@@ -158,10 +161,9 @@ public class WindowsControllerBean {
 			classicAmateurBoardController.setBoardControllerHelper(new ClassicAmateurBoardControllerHelper());
 		}
 
-		return classicAmateurBoardPane;
 	}
 
-	private BorderPane getClassicProBoard() throws IOException {
+	private void getClassicProBoard() throws IOException {
 		if (classicProBoardPane == null) {
 			FXMLLoader fxmlLoader = new FXMLLoader(
 					getClass().getResource("/pl/gymkhana_gp/judge/presentation/views/boards/TournamentBoardView.fxml"));
@@ -174,10 +176,9 @@ public class WindowsControllerBean {
 			classicProBoardController.setBoardControllerHelper(new ClassicProBoardControllerHelper());
 		}
 
-		return classicProBoardPane;
 	}
 
-	private AnchorPane getOptionsPane() throws IOException {
+	private void getOptionsPane() throws IOException {
 		if (optionsPane == null) {
 			FXMLLoader fxmlLoader = new FXMLLoader(
 					getClass().getResource("/pl/gymkhana_gp/judge/presentation/views/OptionsView.fxml"));
@@ -187,7 +188,6 @@ public class WindowsControllerBean {
 			optionsPane = fxmlLoader.load();
 		}
 
-		return optionsPane;
 	}
 
 	////////////////////////////////////////////////////////////////////////////////

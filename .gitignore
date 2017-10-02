@@ -3,3 +3,4 @@
 .idea/
 JudgeGG.iml
 *.xml.backup
+/logs

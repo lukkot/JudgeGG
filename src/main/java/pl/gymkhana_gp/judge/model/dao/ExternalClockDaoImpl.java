@@ -3,6 +3,8 @@ package pl.gymkhana_gp.judge.model.dao;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -12,10 +14,13 @@ import pl.gymkhana_gp.judge.model.dto.TimeDto;
 
 @Component
 public class ExternalClockDaoImpl {
-	@Autowired
-	protected SerialPort serialPort;
 
-	protected StringBuffer buffer = new StringBuffer();
+	private static final Logger LOG = LogManager.getLogger(ExternalClockDaoImpl.class);
+
+	@Autowired
+	SerialPort serialPort;
+
+	private StringBuffer buffer = new StringBuffer();
 
 	public List<String> getPorts() {
 		List<String> ports = new ArrayList<>();
@@ -76,8 +81,7 @@ public class ExternalClockDaoImpl {
 				}
 			}
 		} catch (Exception e) {
-			System.err.println("Rozmiar bufora czytającego z zegara: " + buffer.length());
-			e.printStackTrace();
+			LOG.error("Something went wrong with reading from  external clock. Buffer size: " + buffer.length(), e);
 		}
 		
 		return time;
@@ -94,7 +98,7 @@ public class ExternalClockDaoImpl {
 		}
 	}
 
-	protected SerialPort[] getCommPorts() {
+	SerialPort[] getCommPorts() {
 		return SerialPort.getCommPorts();
 	}
 }

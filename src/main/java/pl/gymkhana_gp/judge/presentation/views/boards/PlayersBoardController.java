@@ -8,6 +8,8 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.util.converter.IntegerStringConverter;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
@@ -31,6 +33,8 @@ import java.io.IOException;
 @Component
 @Scope("prototype")
 public class PlayersBoardController implements IValidationErrorsListener, IOnDataChangedListener<PlayerViewData> {
+
+	private static final Logger LOG = LogManager.getLogger(PlayersBoardController.class);
 
 	@Autowired
 	private TournamentsControllerBean tournamentControllerBean;
@@ -132,11 +136,6 @@ public class PlayersBoardController implements IValidationErrorsListener, IOnDat
 		}
 	}
 
-	@FXML
-	private void tablePlayersDataChanged() {
-		System.out.println("Zmieniono rekord");
-	}
-
 	@Override
 	public void onErrorMessageChanged(Errors errors) {
 		mainWindowController.setErrorsMessage(errors);
@@ -177,8 +176,7 @@ public class PlayersBoardController implements IValidationErrorsListener, IOnDat
 
 				refreshPlayersData();
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+				LOG.error("Error while importing players.", e);
 			}
 		}
 	}
