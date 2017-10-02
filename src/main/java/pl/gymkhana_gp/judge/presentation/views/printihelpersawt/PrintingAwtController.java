@@ -1,5 +1,7 @@
 package pl.gymkhana_gp.judge.presentation.views.printihelpersawt;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.stereotype.Component;
 import pl.gymkhana_gp.judge.presentation.model.TournamentBoardModel;
 
@@ -11,6 +13,8 @@ import java.io.IOException;
 
 @Component
 public class PrintingAwtController {
+
+	private static final Logger LOG = LogManager.getLogger(PrintingAwtController.class);
 
 	public void printWaitingList(TournamentBoardModel tournamentBoardModel) throws IOException {
 		print(getWaitingListPrintable(tournamentBoardModel));
@@ -28,9 +32,9 @@ public class PrintingAwtController {
 			try {
 				printerJob.print();
 			} catch (PrinterAbortException e) {
-				// OK
+				LOG.info("Printing aborted. Everything OK.");
 			} catch (PrinterException e) {
-				e.printStackTrace();
+				LOG.error("Error while printing.", e);
 			}
 		}
 	}

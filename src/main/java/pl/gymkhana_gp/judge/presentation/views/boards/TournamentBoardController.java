@@ -3,6 +3,8 @@ package pl.gymkhana_gp.judge.presentation.views.boards;
 import java.io.IOException;
 import java.util.List;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
@@ -41,6 +43,8 @@ import pl.gymkhana_gp.judge.utils.validation.ObservableValueValidationOnFocusLos
 @Scope("prototype")
 public class TournamentBoardController
 		implements IOnDataChangedListener<PlayerViewData>, IValidationErrorsListener {
+
+	private static final Logger LOG = LogManager.getLogger(TournamentBoardController.class);
 
 	@Autowired
 	private TournamentsControllerBean tournamentControllerBean;
@@ -416,8 +420,7 @@ public class TournamentBoardController
 			mainWindowController.clearMessages();
 			mainWindowController.addMessage("Koniec drukowania!");
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			LOG.error("Error while printing starting list.", e);
 		}
 	}
 
@@ -430,8 +433,7 @@ public class TournamentBoardController
 			mainWindowController.clearMessages();
 			mainWindowController.addMessage("Koniec drukowania!");
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			LOG.error("Error while printing score board.", e);
 		}
 	}
 

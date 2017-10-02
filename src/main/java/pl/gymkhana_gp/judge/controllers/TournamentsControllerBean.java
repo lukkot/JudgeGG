@@ -10,6 +10,8 @@ import java.util.List;
 
 import javax.xml.transform.stream.StreamSource;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.oxm.jaxb.Jaxb2Marshaller;
 import org.springframework.stereotype.Component;
@@ -26,6 +28,9 @@ import pl.gymkhana_gp.judge.services.IClockObserver;
 
 @Component
 public class TournamentsControllerBean {
+
+	private static final Logger LOG = LogManager.getLogger(TournamentsControllerBean.class);
+
 	@Autowired
 	private TournamentDaoImpl tournamentDaoImpl;
 
@@ -55,8 +60,7 @@ public class TournamentsControllerBean {
 		try (BufferedWriter writer = Files.newBufferedWriter(path)) {
 			writer.write(xmlBody);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			LOG.error("Problem with saving data to file.", e);
 			
 			return false;
 		}
@@ -88,14 +92,6 @@ public class TournamentsControllerBean {
 	public void removeClockListener(IClockObserver observer) {
 		externalClockDaoImpl.removeClockListener(observer);
 	}
-	
-	public void startReadingFromClock() {
-		externalClockDaoImpl.startReading();
-	}
-	
-	public void stopReadingFromClock() {
-		externalClockDaoImpl.stopReading();
-	}
 
 	public List<PlayerDto> getAllPlayersData() {
 		return tournamentDaoImpl.getAllPlayersData(null);
@@ -107,10 +103,6 @@ public class TournamentsControllerBean {
 
 	public List<PlayerDto> getPlayersWaiting(TournamentType tournamentType, int roundNumber) {
 		return tournamentDaoImpl.getPlayersWaiting(tournamentType, roundNumber);
-	}
-
-	public List<PlayerDto> getPlayersDone(TournamentType tournamentType, int roundNumber) {
-		return tournamentDaoImpl.getPlayersDone(tournamentType, roundNumber);
 	}
 
 	public PlayerDto getPlayerCurrent(TournamentType tournamentType) {
@@ -141,13 +133,5 @@ public class TournamentsControllerBean {
 		tournamentDaoImpl.updatePlayerData(newPlayerDto, tournamentType);
 
 		saveData();
-	}
-
-	public ClockService getExternalClockDaoImpl() {
-		return externalClockDaoImpl;
-	}
-
-	public void setExternalClockDaoImpl(ClockService externalClockDaoImpl) {
-		this.externalClockDaoImpl = externalClockDaoImpl;
 	}
 }

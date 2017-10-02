@@ -3,6 +3,8 @@ package pl.gymkhana_gp.judge;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.support.AbstractApplicationContext;
@@ -20,11 +22,21 @@ import pl.gymkhana_gp.judge.presentation.views.FileLoaderController;
 @PropertySource("classpath:application.properties")
 public class MainApplication extends Application {
 
+	private static final Logger LOG = LogManager.getLogger(MainApplication.class);
+
 	private AbstractApplicationContext context;
 	private WindowsControllerBean windowsControllerBean;
 
 	public static void main(String[] args) {
+		LOG.info("********************************************************************************");
+		LOG.info("Starting app...");
+		LOG.info("********************************************************************************");
+
 		launch(args);
+
+		LOG.info("********************************************************************************");
+		LOG.info("App stopped.");
+		LOG.info("********************************************************************************");
 	}
 
 	@Override

@@ -9,6 +9,8 @@ import java.util.List;
 
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVRecord;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.stereotype.Component;
 
 import pl.gymkhana_gp.judge.model.dto.PlayerDto;
@@ -17,13 +19,17 @@ import pl.gymkhana_gp.judge.model.enums.Sex;
 
 @Component
 public class PlayerCsvFileDaoImpl {
+
+	private static final Logger LOG = LogManager.getLogger(PlayerCsvFileDaoImpl.class);
+
 	public List<PlayerDto> read(String fileName) throws IOException {
 		List<PlayerDto> playerDtos = new ArrayList<>();
 
-		//new FileReader(fileName)
 		Reader in = new InputStreamReader(new FileInputStream(fileName), "UTF-8");
 		Iterable<CSVRecord> records = CSVFormat.EXCEL.parse(in);
+		int i=0;
 		for (CSVRecord record : records) {
+			i++;
 			if (record.size() < 21) {
 				continue;
 			}
@@ -33,6 +39,7 @@ public class PlayerCsvFileDaoImpl {
 				try {
 					playerDto.setStartNumber(Integer.valueOf(record.get(21)));
 				} catch (NumberFormatException ex) {
+					LOG.error("Error while reading number.", ex);
 					playerDto.setStartNumber(0);
 				}
 				playerDto.setFirstName(record.get(5));
@@ -43,9 +50,9 @@ public class PlayerCsvFileDaoImpl {
 
 				playerDtos.add(playerDto);
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-				continue;
+				LOG.error("Error while reading CSV line: " + i + ".", e);
+
+//				continue;
 			}
 		}
 
