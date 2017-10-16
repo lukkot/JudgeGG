@@ -5,10 +5,9 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import pl.gymkhana_gp.judge.model.dto.FullMeasurementDto;
-import pl.gymkhana_gp.judge.model.dto.PlayerDto;
-import pl.gymkhana_gp.judge.model.enums.PlayerClass;
-import pl.gymkhana_gp.judge.model.enums.Sex;
+import pl.gymkhana_gp.judge.model.enums.TournamentType;
+import pl.gymkhana_gp.judge.testdata.ScoreBoardTestData;
+import pl.gymkhana_gp.judge.testutils.PlayerDtoTestHelper;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,56 +19,72 @@ import static org.junit.Assert.*;
 @ContextConfiguration(locations = {"/Beans.xml"})
 public class ScoreBoardExporterHelperTest {
 
-	private static final String[] HEADER = {
-			"Pozycja", "Imię", "Nazwisko", "Ksywa", "Numer", "Płeć", "Kategoria",
-			"Czas 1", "Kara 1", "Łącznie 1", "Czas 2", "Kara 2", "Łącznie 2", "Lepszy", "Gap", "Do Lidera"
-	};
-	private static final String[] PLAYER_ONE = {
-			"1", "First", "Last", "Nick", "123", "MALE", "AMATEUR",
-			"12:34,567", "1", "12:35,567", "11:22,333", "0", "11:22,333", "11:22,333", "0", "0"};
+
 
 	@Autowired
-	ScoreBoardExporterHelper scoreBoardExporterHelper;
+	private ScoreBoardExporterHelper scoreBoardExporterHelper;
 
 	@Test
-	public void shouldExportOnePlayerData() {
+	public void shouldExportPlayersDataForGp8() {
 		// given
+		TournamentType tournamentType = TournamentType.GP8;
 
 		// when
-		List<String[]> result = scoreBoardExporterHelper.exportScoreBoard(createOnePlayerList(PLAYER_ONE));
+		List<String[]> result = scoreBoardExporterHelper.exportScoreBoard(
+				PlayerDtoTestHelper.createPlayersList(ScoreBoardTestData.PLAYERS_ORDERED, tournamentType), tournamentType
+		);
 
 		// then
 		List<String[]> expected = new ArrayList<>();
-		expected.add(HEADER);
-		expected.add(PLAYER_ONE);
+		expected.add(ScoreBoardTestData.TABLE_HEADER);
+		expected.add(ScoreBoardTestData.PLAYER_1);
+		expected.add(ScoreBoardTestData.PLAYER_2);
+		expected.add(ScoreBoardTestData.PLAYER_3);
+		assertListOfStringArrays(expected, result);
+	}
+
+	@Test
+	public void shouldExportPlayersDataForClassic() {
+		// given
+		TournamentType tournamentType = TournamentType.CLASSIC_AMATEUR;
+
+		// when
+		List<String[]> result = scoreBoardExporterHelper.exportScoreBoard(
+				PlayerDtoTestHelper.createPlayersList(ScoreBoardTestData.PLAYERS_ORDERED, tournamentType), tournamentType
+		);
+
+		// then
+		List<String[]> expected = new ArrayList<>();
+		expected.add(ScoreBoardTestData.TABLE_HEADER);
+		expected.add(ScoreBoardTestData.PLAYER_1);
+		expected.add(ScoreBoardTestData.PLAYER_2);
+		expected.add(ScoreBoardTestData.PLAYER_3);
+		assertListOfStringArrays(expected, result);
+	}
+
+	@Test
+	public void shouldExportPlayersDataForGp8InOrder() {
+		// given
+		TournamentType tournamentType = TournamentType.CLASSIC_AMATEUR;
+
+		// when
+		List<String[]> result = scoreBoardExporterHelper.exportScoreBoard(
+				PlayerDtoTestHelper.createPlayersList(ScoreBoardTestData.PLAYERS_RANDOM, tournamentType), tournamentType
+		);
+
+		// then
+		List<String[]> expected = new ArrayList<>();
+		expected.add(ScoreBoardTestData.TABLE_HEADER);
+		expected.add(ScoreBoardTestData.PLAYER_1);
+		expected.add(ScoreBoardTestData.PLAYER_2);
+		expected.add(ScoreBoardTestData.PLAYER_3);
 		assertListOfStringArrays(expected, result);
 	}
 
 	private void assertListOfStringArrays(List<String[]> expected, List<String[]> actual) {
 		assertThat("Lists sizes differs.", actual.size(), is(expected.size()));
 		for(int i=0; i<expected.size(); i++) {
-			assertArrayEquals(expected.get(i), actual.get(i));
+			assertArrayEquals("Array no. " + i, expected.get(i), actual.get(i));
 		}
-	}
-
-	private List<PlayerDto> createOnePlayerList(String[] playerArray) {
-		List<PlayerDto> list = new ArrayList<>();
-		PlayerDto player = new PlayerDto();
-		player.setFirstName(playerArray[1]);
-		player.setLastName(playerArray[2]);
-		player.setNick(playerArray[3]);
-		player.setStartNumber(Integer.valueOf(playerArray[4]));
-		player.setSex(Sex.valueOf(playerArray[5]));
-		player.setPlayerClass(PlayerClass.valueOf(playerArray[6]));
-		player.setGp8Measurements(getMeasurements(playerArray[7], Integer.valueOf(playerArray[8]), playerArray[10], Integer.valueOf(playerArray[11])));
-		list.add(player);
-		return list;
-	}
-
-	private List<FullMeasurementDto> getMeasurements(String time1, long penalty1, String time2, long penalty2) {
-		List<FullMeasurementDto> list = new ArrayList<>();
-		list.add(FullMeasurementDto.getInstanceOrNull(time1, penalty1));
-		list.add(FullMeasurementDto.getInstanceOrNull(time2, penalty2));
-		return list;
 	}
 }

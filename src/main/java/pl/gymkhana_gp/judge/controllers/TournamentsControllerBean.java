@@ -18,6 +18,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.xml.transform.StringResult;
 
 import pl.gymkhana_gp.judge.ConfigurationBean;
+import pl.gymkhana_gp.judge.model.dao.HtmlScoreBoardExporter;
 import pl.gymkhana_gp.judge.model.dao.PlayerCsvFileDaoImpl;
 import pl.gymkhana_gp.judge.model.dao.TournamentDaoImpl;
 import pl.gymkhana_gp.judge.model.dto.GymkhanaTournamentDto;
@@ -45,6 +46,9 @@ public class TournamentsControllerBean {
 	
 	@Autowired
 	private ClockService externalClockDaoImpl;
+
+	@Autowired
+	private HtmlScoreBoardExporter htmlScoreBoardExporter;
 
 	public void saveData() {
 		StringResult result = new StringResult();
@@ -133,5 +137,9 @@ public class TournamentsControllerBean {
 		tournamentDaoImpl.updatePlayerData(newPlayerDto, tournamentType);
 
 		saveData();
+	}
+
+	public String generateScoreBoardHtml(TournamentType tournamentType) {
+		return htmlScoreBoardExporter.createScoreBoardHtmlTable(getAllPlayers(tournamentType), tournamentType);
 	}
 }

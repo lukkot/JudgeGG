@@ -2,6 +2,7 @@ package pl.gymkhana_gp.judge.presentation.views;
 
 import java.util.List;
 
+import javafx.scene.control.TextArea;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -11,14 +12,21 @@ import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import pl.gymkhana_gp.judge.controllers.TournamentsControllerBean;
 import pl.gymkhana_gp.judge.model.dao.ExternalClockSettings;
+import pl.gymkhana_gp.judge.model.enums.TournamentType;
 import pl.gymkhana_gp.judge.services.ClockService;
 
 @Component
 public class OptionsController {
 	@Autowired
+	private
 	ClockService clockService;
 	
+	@Autowired
+	private TournamentsControllerBean tournamentsControllerBean;
+
+	// Ustawienie portu zegara
 	@FXML
 	ComboBox<String> comboBoxPortName;
 	@FXML
@@ -33,6 +41,14 @@ public class OptionsController {
 	Button buttonStart;
 	@FXML
 	Button buttonStop;
+
+	// Wyniki HTML
+	@FXML
+	TextArea textAreaScoreBoardHtmlGp8;
+	@FXML
+	TextArea textAreaScoreBoardHtmlClassicAmateur;
+	@FXML
+	TextArea textAreaScoreBoardHtmlClassicPro;
 
 	@FXML
 	public void initialize() {
@@ -81,5 +97,18 @@ public class OptionsController {
 		
 		clockService.stopReading();
 		
+	}
+
+	@FXML
+	public void onButtonScoreBoardHtmlGenerate() {
+		textAreaScoreBoardHtmlGp8.setText(
+				tournamentsControllerBean.generateScoreBoardHtml(TournamentType.GP8)
+		);
+		textAreaScoreBoardHtmlClassicAmateur.setText(
+				tournamentsControllerBean.generateScoreBoardHtml(TournamentType.CLASSIC_AMATEUR)
+		);
+		textAreaScoreBoardHtmlClassicPro.setText(
+				tournamentsControllerBean.generateScoreBoardHtml(TournamentType.CLASSIC_PRO)
+		);
 	}
 }

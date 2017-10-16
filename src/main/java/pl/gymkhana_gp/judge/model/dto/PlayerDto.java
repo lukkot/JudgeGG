@@ -13,20 +13,9 @@ import pl.gymkhana_gp.judge.model.enums.TournamentType;
 
 @XmlRootElement
 public class PlayerDto {
-	public static int MEASUREMENT_ROUND_1 = 0;
-	public static int MEASUREMENT_ROUND_2 = 1;
-	public static int MEASUREMENT_ROUND_SIZE = 2;
-
-	public static final PlayerDto NULL_PLAYER_DTO = getNullPlayerDto();
-
-	private static PlayerDto getNullPlayerDto() {
-		PlayerDto playerDto = new PlayerDto(-1);
-		playerDto.setFirstName("");
-		playerDto.setLastName("");
-		playerDto.setNick("");
-		
-		return playerDto;
-	}
+	private static final int MEASUREMENT_ROUND_1 = 0;
+	private static final int MEASUREMENT_ROUND_2 = 1;
+	private static final int MEASUREMENT_ROUND_SIZE = 2;
 
 	private static long idSequence = 0;
 
@@ -48,15 +37,15 @@ public class PlayerDto {
 
 	public PlayerDto(long id) {
 		this.id = id;
-		startNumber = new Integer((int) getId());
+		startNumber = (int) getId();
 
 		gp8Measurements = new ArrayList<>(MEASUREMENT_ROUND_SIZE);
-		gp8Measurements.add(MEASUREMENT_ROUND_1, null);
-		gp8Measurements.add(MEASUREMENT_ROUND_2, null);
+		gp8Measurements.add(MEASUREMENT_ROUND_1, new FullMeasurementDto());
+		gp8Measurements.add(MEASUREMENT_ROUND_2, new FullMeasurementDto());
 
 		classicMeasurements = new ArrayList<>(MEASUREMENT_ROUND_SIZE);
-		classicMeasurements.add(MEASUREMENT_ROUND_1, null);
-		classicMeasurements.add(MEASUREMENT_ROUND_2, null);
+		classicMeasurements.add(MEASUREMENT_ROUND_1, new FullMeasurementDto());
+		classicMeasurements.add(MEASUREMENT_ROUND_2, new FullMeasurementDto());
 	}
 
 	public void update(final PlayerDto newPlayerDto, final TournamentType tournamentType) {
@@ -80,11 +69,26 @@ public class PlayerDto {
 		}
 	}
 
+	public List<FullMeasurementDto> getMeasurementByTournamentType(TournamentType tournamentType) {
+		switch (tournamentType) {
+			case GP8:
+				return getGp8Measurements();
+			case CLASSIC_PRO:
+			case CLASSIC_AMATEUR:
+				return getClassicMeasurements();
+			default:
+				throw new IllegalStateException("Wrong tournament type: " + tournamentType);
+		}
+	}
+
 	@Override
 	public boolean equals(Object obj) {
+		if (obj == null || getClass() != obj.getClass())
+			return false;
+
 		PlayerDto player = (PlayerDto) obj;
 
-		return player != null && player.getId() == getId();
+		return player.getId() == getId();
 	}
 
 	public long getId() {
