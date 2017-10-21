@@ -111,4 +111,17 @@ public class OptionsController {
 				tournamentsControllerBean.generateScoreBoardHtml(TournamentType.CLASSIC_PRO)
 		);
 	}
+
+	@FXML
+	public void onButtonScoreBoardCsvGenerate() {
+		textAreaScoreBoardHtmlGp8.setText(
+				tournamentsControllerBean.generateScoreBoardCsv(TournamentType.GP8)
+		);
+		textAreaScoreBoardHtmlClassicAmateur.setText(
+				tournamentsControllerBean.generateScoreBoardCsv(TournamentType.CLASSIC_AMATEUR)
+		);
+		textAreaScoreBoardHtmlClassicPro.setText(
+				tournamentsControllerBean.generateScoreBoardCsv(TournamentType.CLASSIC_PRO)
+		);
+	}
 }
